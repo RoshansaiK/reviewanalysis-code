@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html
+  lang="en-US"
+  class="h-full motion-on"
+  data-menu-state="off"
+  data-motion="off"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="csrf-token"
+      content="Kkk4CgQlfzs6Ih8vDWh8d0YhTh4iKCEdixAlFiOZbCwVb920sIyVcnOi"
+    />
+
+    <title data-suffix=" · Fly">CloudCodeReview</title>
+
+    <meta content="origin" name="referrer" />
+    <meta content="True" name="HandheldFriendly" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script defer="" data-domain="fly.io" src="js/events.js"></script>
+
+    <link
+      href="https://i.pinimg.com/originals/75/db/80/75db80642e75acc0f8514572065964ac.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link
+      href="https://i.pinimg.com/originals/75/db/80/75db80642e75acc0f8514572065964ac.png"
+      rel="apple-touch-icon"
+      sizes="180x180"
+    />
+    <link
+      href="https://i.pinimg.com/originals/75/db/80/75db80642e75acc0f8514572065964ac.png"
+      rel="icon"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link
+      href="https://i.pinimg.com/originals/75/db/80/75db80642e75acc0f8514572065964ac.png"
+      rel="icon"
+      sizes="16x16"
+      type="image/png"
+    />
+    <link
+      href="https://i.pinimg.com/originals/75/db/80/75db80642e75acc0f8514572065964ac.png"
+      rel="manifest"
+    />
+    <link
+      href="https://i.pinimg.com/originals/75/db/80/75db80642e75acc0f8514572065964ac.png"
+      rel="mask-icon"
+      color="#4d7cfe"
+    />
+    <meta content="#4d7cfe" name="msapplication-TileColor" />
+    <meta content="#ffffff" name="theme-color" />
+    <style>
+      html:not(.motion-on) * {
+        transition: none !important;
+        animation: none !important;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.documentElement.classList.add("motion-on");
+      });
+    </script>
+    <style>
+      @font-face {
+        font-family: "Fricolage Grotesque";
+        font-weight: 100 900;
+        font-display: block;
+        font-style: normal;
+        font-named-instance: "Regular";
+        src: url(fonts/fricolage-grotesque.var.woff2) format("woff2");
+      }
+
+      @font-face {
+        font-family: "Mackinac";
+        src: url("fonts/mackinac-medium.woff2") format("woff2");
+        font-weight: 500;
+        font-style: normal;
+        font-display: block;
+      }
+
+      @font-face {
+        font-family: "Mackinac";
+        src: url("fonts/mackinac-medium-italic.woff2") format("woff2");
+        font-weight: 500;
+        font-style: italic;
+        font-display: block;
+      }
+
+      @font-face {
+        font-family: "Mackinac";
+        src: url("fonts/mackinac-bold.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
+      }
+
+      @font-face {
+        font-family: "Mackinac";
+        src: url("fonts/mackinac-bold-italic.woff2") format("woff2");
+        font-weight: 700;
+        font-style: italic;
+        font-display: block;
+      }
+
+      @font-face {
+        font-family: "Fragment Mono";
+        src: url("fonts/fragment-mono-regular.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+      }
+
+      @font-face {
+        font-family: "Fragment Mono";
+        src: url("fonts/fragment-mono-italic.woff2") format("woff2");
+        font-weight: 400;
+        font-style: italic;
+        font-display: block;
+      }
+    </style>
+
+    <script>
+      var fontsInServiceWorker =
+        (sessionStorage.foutFontsStage1Loaded &&
+          sessionStorage.foutFontsStage2Loaded) ||
+        ("serviceWorker" in navigator &&
+          navigator.serviceWorker.controller !== null &&
+          navigator.serviceWorker.controller.state === "activated");
+      if (!fontsInServiceWorker && "fonts" in document) {
+        function fetchFonts(fonts) {
+          return Promise.all(
+            fonts.map(function (font) {
+              return document.fonts.load(font);
+            })
+          );
+        }
+
+        if (sessionStorage.foutFontsStage2Loaded) {
+          document.documentElement.className += " wf-loaded-stage2";
+        } else {
+          sessionStorage.foutFontsStage1Loaded = true;
+        }
+      }
+
+      if ("fonts" in document) {
+        let sansRoman = new FontFace(
+          "Fricolage Grotesque",
+          "url('/phx/ui/fonts/fricolage-grotesque.var.woff2') format('woff2')",
+          {
+            weight: "100 900",
+            style: "normal",
+          }
+        );
+
+        let serifMedium = new FontFace(
+          "Mackinac",
+          "url('/phx/ui/fonts/mackinac-medium.woff2') format('woff2')",
+          { weight: "500" }
+        );
+
+        let serifMediumItalic = new FontFace(
+          "Mackinac",
+          "url('/phx/ui/fonts/mackinac-medium-italic.woff2') format('woff2')",
+          {
+            weight: "500",
+            style: "italic",
+          }
+        );
+
+        let serifBold = new FontFace(
+          "Mackinac",
+          "url('/phx/ui/fonts/mackinac-bold.woff2') format('woff2')",
+          { weight: "700" }
+        );
+
+        let serifBoldItalic = new FontFace(
+          "Mackinac",
+          "url('/phx/ui/fonts/mackinac-bold-italic.woff2') format('woff2')",
+          {
+            weight: "700",
+            style: "italic",
+          }
+        );
+
+        let monoRegular = new FontFace(
+          "FragmentMono",
+          "url('/phx/ui/fonts/fragment-mono-regular.woff2') format('woff2')",
+          { weight: "400" }
+        );
+
+        let monoItalic = new FontFace(
+          "FragmentMono",
+          "url('/phx/ui/fonts/fragment-mono-italic.woff2') format('woff2')",
+          {
+            weight: "400",
+            style: "italic",
+          }
+        );
+
+        let loadedFonts = Promise.all([
+          sansRoman.load(),
+          serifMedium.load(),
+          serifMediumItalic.load(),
+          serifBold.load(),
+          serifBoldItalic.load(),
+          monoRegular.load(),
+          monoItalic.load(),
+        ])
+          .then((result) => {
+            result.forEach((font) => document.fonts.add(font));
+            document.documentElement.classList.add("wf-loaded-stage2");
+            sessionStorage.foutFontsStage2Loaded = true;
+          })
+          .catch((error) => {
+            throw new Error(`Error caught: ${error}`);
+          });
+      }
+
+      if (
+        (sessionStorage.foutFontsStage1Loaded &&
+          sessionStorage.foutFontsStage2Loaded) ||
+        ("serviceWorker" in navigator &&
+          navigator.serviceWorker.controller !== null &&
+          navigator.serviceWorker.controller.state === "activated")
+      ) {
+        document.documentElement.classList.add("wf-loaded-stage2");
+      }
+    </script>
+
+    <link
+      rel="preload"
+      href="/phx/ui/fonts/fricolage-grotesque.var.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="/phx/ui/fonts/mackinac-medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="/phx/ui/fonts/mackinac-medium-italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="/phx/ui/fonts/mackinac-bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="/phx/ui/fonts/mackinac-bold-italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="/phx/ui/fonts/fragment-mono-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+    <link
+      rel="preload"
+      href="/phx/ui/fonts/fragment-mono-italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin=""
+    />
+
+    <link
+      phx-track-static=""
+      rel="stylesheet"
+      href="css/app-c065fc252b256d44a40faccb675daf31.css"
+    />
+
+    <script>
+      document.documentElement.classList.remove("no-js");
+    </script>
+    <style>
+      .no-js [data-src] {
+        display: none;
+      }
+    </style>
+    <script
+      defer=""
+      phx-track-static=""
+      type="text/javascript"
+      src="js/app-77f6dc3d3cd698d2a6863d8908556ecd.js"
+    ></script>
+
+    <link rel="me" href="https://hachyderm.io/@flydotio" />
+  </head>
+
+  <body class="w-full min-h-full">
+    <header
+      class="navbar relative z-[500] container mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-24 text-white font-medium text-sm"
+      data-menu-container=""
+    >
+    <nav aria-label="CloudCodeReview Logo Menu" class="relative flex items-center justify-between bg-gray-900 p-4">
+      <!-- Logo Section -->
+      <a href="/" class="flex items-center space-x-2">
+        <img src="https://i.pinimg.com/originals/75/db/80/75db80642e75acc0f8514572065964ac.png" alt="CloudCodeReview Logo" class="w-12 h-12">
+        <span class="text-white text-2xl font-semibold">CloudCodeReview</span>
+      </a>
+    </nav>
+
+      <button
+        data-menu-toggle=""
+        aria-expanded="false"
+        class="ml-auto menu-toggle xl:hidden relative z-[60] -scale-x-100 rounded-full bg-transparent [[data-menu-state=on]_&amp;]:shadow-sm transition-colors flex-none flex items-center justify-center w-8 h-8 -mx-2"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          data-menu-button=""
+          class="absolute cursor-pointer transition-transform duration-[400ms] select-none [[data-menu-state=on]_&amp;]:rotate-45"
+          viewBox="0 0 100 100"
+          width="30"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            pathLength="100"
+            transform="rotate(-90 50 50)"
+            class="fill-none transition-all duration-[400ms] stroke-transparent sm:stroke-current stroke-[5.5] [[data-menu-state=on]_&amp;]:fill-navy sm:[[data-menu-state=on]_&amp;]:fill-none [[data-menu-state=on]_&amp;]:[stroke-linecap:round] [stroke-dasharray:0_100] [[data-menu-state=on]_&amp;]:[stroke-dasharray:100_100]"
+          ></circle>
+          <path
+            class="fill-none transition-all duration-[400ms] stroke-current stroke-[5.5] [stroke-linecap:round] [stroke-dasharray:40_121] [[data-menu-state=on]_&amp;]:[stroke-dashoffset:-68px]"
+            d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
+          ></path>
+          <path
+            class="fill-none transition-all duration-[400ms] stroke-current stroke-[5.5] [stroke-linecap:round]"
+            d="m 55,50 h -25"
+          ></path>
+          <path
+            class="fill-none transition-all duration-[400ms] stroke-current stroke-[5.5] [stroke-linecap:round] [stroke-dasharray:40_121] [[data-menu-state=on]_&amp;]:[stroke-dashoffset:-68px]"
+            d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+          ></path>
+        </svg>
+      </button>
+
+      <nav
+      aria-label="Main menu"
+      class="pointer-events-auto hidden lg:flex xl:w-full items-center justify-end"
+    >
+      <!-- Centered Menu Items -->
+      <div
+        class="hidden xl:flex items-center absolute left-1/2 -translate-x-1/2 px-3 text-sm font-medium text-white"
+      >
+        <!-- Code Reviews -->
+        <div class="relative">
+          <a
+            href="#code-reviews"
+            class="flex items-center transition duration-300 px-3 py-2.5 hover:text-violet-400"
+          >
+            Code Reviews ▼
+          </a>
+          <ul
+            id="code-reviews"
+            class="absolute left-0 w-48 bg-white text-gray-900 rounded-lg shadow-lg hidden group-hover:block z-10"
+          >
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Automated Code Scan</a></li>
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Code Quality</a></li>
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Pull Request Reviews</a></li>
+          </ul>
+        </div>
+    
+        <!-- Security -->
+        <div class="relative ml-4">
+          <a
+            href="#security"
+            class="flex items-center transition duration-300 px-3 py-2.5 hover:text-violet-400"
+          >
+            Security ▼
+          </a>
+          <ul
+            id="security"
+            class="absolute left-0 w-48 bg-white text-gray-900 rounded-lg shadow-lg hidden group-hover:block z-10"
+          >
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Vulnerability Scans</a></li>
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Penetration Testing</a></li>
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Real-Time Analysis</a></li>
+          </ul>
+        </div>
+    
+        <!-- Insights -->
+        <div class="relative ml-4">
+          <a
+            href="#insights"
+            class="flex items-center transition duration-300 px-3 py-2.5 hover:text-violet-400"
+          >
+            Insights ▼
+          </a>
+          <ul
+            id="insights"
+            class="absolute left-0 w-48 bg-white text-gray-900 rounded-lg shadow-lg hidden group-hover:block z-10"
+          >
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Performance Analytics</a></li>
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Error Reports</a></li>
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Code Optimization</a></li>
+          </ul>
+        </div>
+    
+        <!-- Group Info -->
+        <div class="relative ml-4">
+          <a
+            href="#group-info"
+            class="flex items-center transition duration-300 px-3 py-2.5 hover:text-violet-400"
+          >
+            Project Info ▼
+          </a>
+          
+          <ul
+            id="group-info"
+            class="absolute left-0 w-48 bg-white text-gray-900 rounded-lg shadow-lg hidden group-hover:block z-10"
+          >
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Roshan Sai Ketam - Fullstack Developer</a></li>
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Rabi Porida - Team Leader</a></li>
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Lavanya - Team Member</a></li>
+            <li><a href="#" class="px-4 py-2 block hover:bg-gray-100">Sunil - Team Member</a></li>
+          </ul>
+        </div>
+      </div>
+    
+      <!-- Sign In and Get Started Buttons -->
+      <div class="ml-5 flex-none flex items-center">
+        <a
+          href="../l,r/index.php"
+          class="flex-none group relative text-base sm:text-sm ml-5px h-8 pr-3 btn-xs btn-purple border-none rounded-full"
+        >
+          Get Started
+        </a>
+      </div>
+      
+    </nav>
+    
+    <!-- Add this script for basic toggle functionality -->
+    <script>
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.style.display =
+              target.style.display === 'block' ? 'none' : 'block';
+          }
+        });
+      });
+    </script>   
+
+      <div
+        class="xl:hidden opacity-0 z-[-1] pointer-events-none [[data-menu-state=on]_&amp;]:pointer-events-auto [[data-menu-state=on]_&amp;]:opacity-100 [[data-menu-state=on]_&amp;]:z-40 transition-all duration-500 fixed inset-0 bg-gray-500/25 backdrop-blur-sm"
+      ></div>
+      <nav
+        data-menu=""
+        aria-label="Main menu"
+        class="xl:hidden [[data-menu-state=on]_&amp;]:translate-x-0 -translate-x-full transition duration-300 ease-in-out text-sm w-full overflow-hidden sm:max-w-sm md:max-w-[25rem] fixed left-0 top-0 bottom-0 z-50 border-t border-t-gray-200 bg-clip-padding pl-[calc(50vw-240px)] sm:pl-[calc(50vw-320px+1.5rem)] md:pl-[calc(50vw-384px+1.5rem)] lg:pl-[calc(50vw-504px+1.5rem)] pr-6 pt-24 bg-white shadow-[1px_0_rgba(86,75,128,0.1)]"
+      >
+        <a
+          href="/"
+          aria-hidden="true"
+          class="absolute [[data-menu-state=on]_&amp;]:translate-x-0 translate-x-[100vw] sm:translate-x-[24rem] md:translate-x-[25rem] transition duration-300 ease-in-out top-[29px] pl-4 sm:pl-0"
+        >
+          <svg
+            aria-labelledby="title-GA7olHYXqbLJV27idescription-GA7olHYXs1jJV27y"
+            class=""
+            role="img"
+            style="pointer-events: none; width: auto; height: 36px"
+            aria-hidden="true"
+            viewBox="0 0 259 84"
+            fill-rule="evenodd"
+          >
+            <title id="title-GA7olHYX33zJV28C"></title>
+            <desc id="description-GA7olHYX6mzJV28S"></desc>
+
+            <g buffered-rendering="static">
+              <path
+                d="M57.413 10.134h9.454c8.409 0 15.236 6.827 15.236 15.236v33.243c0 8.409-6.827 15.236-15.236 15.236h-.745c-4.328-.677-6.205-1.975-7.655-3.072l-12.02-9.883a1.692 1.692 0 0 0-2.128 0l-3.905 3.211-10.998-9.043a1.688 1.688 0 0 0-2.127 0L12.01 68.503c-3.075 2.501-5.109 2.039-6.428 1.894C2.175 67.601 0 63.359 0 58.613V25.37c0-8.409 6.827-15.236 15.237-15.236h9.433l-.017.038-.318.927-.099.318-.428 1.899-.059.333-.188 1.902-.025.522-.004.183.018.872.043.511.106.8.135.72.16.663.208.718.54 1.52.178.456.94 1.986.332.61 1.087 1.866.416.673 1.517 2.234.219.296 1.974 2.569.638.791 2.254 2.635.463.507 1.858 1.999.736.762 1.216 1.208-.244.204-.152.137c-.413.385-.805.794-1.172 1.224a10.42 10.42 0 0 0-.504.644 8.319 8.319 0 0 0-.651 1.064 6.234 6.234 0 0 0-.261.591 5.47 5.47 0 0 0-.353 1.606l-.007.475a5.64 5.64 0 0 0 .403 1.953 5.44 5.44 0 0 0 1.086 1.703c.338.36.723.674 1.145.932.359.22.742.401 1.14.539a6.39 6.39 0 0 0 2.692.306h.005a6.072 6.072 0 0 0 2.22-.659c.298-.158.582-.341.848-.549a5.438 5.438 0 0 0 1.71-2.274c.28-.699.417-1.446.405-2.198l-.022-.393a5.535 5.535 0 0 0-.368-1.513 6.284 6.284 0 0 0-.285-.618 8.49 8.49 0 0 0-.67-1.061 11.022 11.022 0 0 0-.354-.453 14.594 14.594 0 0 0-1.308-1.37l-.329-.28.557-.55 2.394-2.5.828-.909 1.287-1.448.837-.979 1.194-1.454.808-1.016 1.187-1.587.599-.821.85-1.271.708-1.083 1.334-2.323.763-1.524.022-.047.584-1.414a.531.531 0 0 0 .02-.056l.629-1.962.066-.286.273-1.562.053-.423.016-.259.019-.978-.005-.182-.05-.876-.062-.68-.31-1.961c-.005-.026-.01-.052-.018-.078l-.398-1.45-.137-.403-.179-.446Zm4.494 41.455a3.662 3.662 0 0 0-3.61 3.61 3.663 3.663 0 0 0 3.61 3.609 3.665 3.665 0 0 0 3.611-3.609 3.663 3.663 0 0 0-3.611-3.61Z"
+                fill="url(#fwg_Radial1)"
+              ></path>
+
+              <path
+                d="M35.639 72.544l-.637.535a3.332 3.332 0 01-2.09.762H15.235a15.176 15.176 0 01-9.654-3.451c1.319.145 3.353.607 6.428-1.894l15.277-13.44a1.693 1.693 0 012.127 0l10.997 9.042 3.904-3.21c.619-.5 1.51-.5 2.128 0l12.019 9.882c1.45 1.097 3.327 2.394 7.654 3.071H58.12a3.394 3.394 0 01-1.963-.654l-.14-.108-.593-.493a1.247 1.247 0 00-.158-.159c-.672-.563-9.187-7.617-9.187-7.617a1 1 0 00-1.281.002s.021.026-9.038 7.615a1.12 1.12 0 00-.121.117zm26.262-20.96a3.678 3.678 0 00-3.61 3.609 3.68 3.68 0 003.61 3.609 3.68 3.68 0 003.61-3.609 3.678 3.678 0 00-3.61-3.609zM38.566 40.648L37.35 39.44l-.736-.762-1.858-1.999-.463-.507-2.253-2.634-.638-.791-1.974-2.569-.219-.296-1.517-2.234-.416-.673-1.087-1.866-.332-.61-.94-1.985-.178-.456-.539-1.52-.208-.718-.16-.663-.135-.72-.106-.8-.043-.511-.018-.872.004-.183.025-.522.188-1.901.059-.333.428-1.899.098-.318.318-.927.102-.24.506-1.112.351-.662.489-.806.487-.718.347-.456.4-.482.44-.484.377-.378.918-.808.671-.549c.016-.014.033-.026.05-.038l.794-.537.631-.402 1.198-.631c.018-.011.039-.02.058-.029l1.698-.705.157-.059 1.51-.442.638-.143.862-.173.572-.087.877-.109.598-.053 1.187-.063.465-.005.881.018.229.013 1.276.106 1.687.238.195.041 1.668.415.49.146.544.188.663.251.524.222.77.363.485.249.872.512.325.2 1.189.868.341.296.828.754.041.041.703.754.242.273.825 1.096.168.262.655 1.106.197.379.369.825.386.963.137.403.398 1.45a.89.89 0 01.018.078l.31 1.961.062.679.05.876.005.182-.019.978-.016.259-.053.423-.273 1.562-.066.286-.629 1.962a.626.626 0 01-.02.056l-.584 1.414-.022.047-.763 1.523-1.334 2.323-.708 1.083-.849 1.271-.599.821-1.187 1.587-.808 1.016-1.194 1.453-.837.979-1.287 1.448-.828.909-2.394 2.5-.556.55.328.28c.465.428.902.885 1.308 1.37.122.148.24.299.354.453.249.336.473.691.67 1.06.106.2.201.407.285.618.191.484.32.996.368 1.513l.022.393c.012.752-.125 1.5-.405 2.198a5.438 5.438 0 01-1.71 2.274c-.266.208-.55.391-.848.549a6.08 6.08 0 01-2.219.659h-.005a6.403 6.403 0 01-2.692-.306 5.882 5.882 0 01-1.14-.539 5.523 5.523 0 01-1.145-.932 5.458 5.458 0 01-1.086-1.703 5.662 5.662 0 01-.403-1.953l.007-.475a5.47 5.47 0 01.353-1.606c.077-.202.164-.399.261-.591.19-.37.408-.725.651-1.063.159-.221.328-.436.504-.644.367-.43.759-.839 1.172-1.224l.152-.137.244-.204z"
+                class="fill-navy"
+              ></path>
+              <path
+                d="M35.002 73.079l9.796-8.267a1 1 0 011.281-.002l9.938 8.269c.604.492 1.36.761 2.139.762h-25.28c.776 0 1.527-.269 2.126-.762zM41.1 43.568l.096.028c.031.015.057.036.085.055l.08.071c.198.182.39.373.575.569.13.139.257.282.379.43.155.187.3.383.432.587.057.09.11.181.16.276.043.082.082.167.116.253.06.15.105.308.119.469l-.003.302a1.726 1.726 0 01-.817 1.343 2.333 2.333 0 01-.994.327l-.373.011-.315-.028a2.398 2.398 0 01-.433-.105 2.07 2.07 0 01-.41-.192l-.246-.18a1.685 1.685 0 01-.56-.96 2.418 2.418 0 01-.029-.19l-.009-.288c.005-.078.017-.155.034-.232.043-.168.105-.331.183-.486.101-.194.216-.381.344-.559.213-.288.444-.562.691-.821.159-.168.322-.331.492-.488l.121-.109c.084-.055.085-.055.181-.083h.101zM40.481 3.42l.039-.003v33.665l-.084-.155a94.101 94.101 0 01-3.093-6.267 67.257 67.257 0 01-2.099-5.255 41.665 41.665 0 01-1.265-4.326c-.265-1.163-.469-2.343-.553-3.535a16.923 16.923 0 01-.029-1.528c.008-.444.026-.887.054-1.33.044-.696.115-1.391.217-2.081.081-.543.181-1.084.304-1.619.098-.425.212-.847.342-1.262.188-.6.413-1.186.675-1.758.096-.206.199-.411.307-.612.65-1.204 1.532-2.313 2.687-3.054a5.609 5.609 0 012.498-.88zm4.365.085l2.265.646c1.049.387 2.059.891 2.987 1.521a11.984 11.984 0 013.212 3.204c.502.748.918 1.555 1.243 2.398.471 1.247.763 2.554.866 3.882.03.348.047.697.054 1.046.008.324.006.649-.02.973-.064.725-.2 1.442-.407 2.14a17.03 17.03 0 01-.587 1.684c-.28.685-.591 1.357-.932 2.013-.754 1.457-1.623 2.852-2.553 4.201a65.451 65.451 0 01-3.683 4.806 91.02 91.02 0 01-4.417 4.896 93.66 93.66 0 002.907-5.949c.5-1.124.971-2.26 1.414-3.407.487-1.26.927-2.537 1.317-3.83.29-.969.546-1.948.757-2.938.181-.849.323-1.707.411-2.57.074-.72.101-1.444.083-2.166a30.867 30.867 0 00-.049-1.325c-.106-1.775-.376-3.545-.894-5.248a15.341 15.341 0 00-.714-1.892c-.663-1.444-1.588-2.793-2.84-3.778l-.42-.307z"
+                fill="white"
+              ></path>
+
+              <path
+                d="M179.213 64.297l-10.751-23.015c-.898-1.917-1.433-2.618-2.331-3.431l-.874-.788c-.697-.676-1.155-1.302-1.155-2.045 0-1.064.843-1.96 2.378-1.96h9.334c1.465 0 2.378.762 2.378 1.9 0 .635-.292 1.111-.661 1.578-.438.555-1.008 1.096-1.008 2.082 0 .618.18 1.234.527 2.021l6.416 15.025 5.755-14.647c.354-.974.596-1.832.596-2.519 0-1.069-.581-1.505-1.029-1.983-.39-.415-.702-.854-.702-1.557 0-1.149.935-1.9 2.193-1.9h5.748c1.612 0 2.378.834 2.378 1.9 0 .682-.393 1.314-1.166 1.996l-.813.668c-1.132.925-1.656 2.263-2.251 3.647l-8.716 20.998c-1.03 2.455-2.563 5.863-4.905 8.659-2.379 2.84-5.587 5.048-9.932 5.048-3.638 0-5.84-1.737-5.84-4.24 0-2.293 1.696-4.12 3.924-4.12 1.22 0 1.855.576 2.499 1.169.532.489 1.072.991 2.137.991.988 0 1.908-.418 2.742-1.093 1.274-1.03 2.341-2.652 3.129-4.384zm63.175-.082c4.839 0 8.804-1.658 11.897-4.967 3.09-3.304 4.636-7.281 4.636-11.931 0-4.539-1.469-8.268-4.396-11.191-2.926-2.921-6.723-4.388-11.396-4.388-4.92 0-8.944 1.597-12.077 4.78-3.135 3.186-4.703 7.045-4.703 11.578 0 4.493 1.496 8.301 4.483 11.425 2.99 3.126 6.84 4.694 11.556 4.694zm-40.921-.36c2.798 0 4.788-1.884 4.788-4.6 0-2.652-2.055-4.54-4.788-4.54-2.863 0-4.912 1.891-4.912 4.54 0 2.713 2.05 4.6 4.912 4.6zm9.964-4.305l.681-.72c.81-.787 1.071-1.582 1.071-3.774V42.097c0-1.895-.258-2.741-1.062-3.465l-.801-.718c-.785-.693-1.043-1.124-1.043-1.816 0-.984.763-1.791 1.99-2.071l5.44-1.32c.52-.126 1.107-.249 1.562-.249.626 0 1.138.206 1.497.563.36.358.572.873.572 1.517v20.518c0 2.069.251 3.031 1.115 3.758a.359.359 0 01.039.039l.608.708c.764.743 1.081 1.236 1.081 1.914 0 1.209-.912 1.9-2.377 1.9h-9.211c-1.396 0-2.316-.687-2.316-1.9 0-.681.317-1.178 1.154-1.925zm-61.567.001l.681-.721c.811-.787 1.071-1.582 1.071-3.774V27.999c0-1.835-.194-2.736-1.053-3.459l-.822-.796c-.709-.689-.968-1.116-.968-1.805 0-.985.767-1.789 1.927-2.07l5.378-1.32c.521-.126 1.107-.249 1.563-.249.621 0 1.147.187 1.522.542.376.356.608.885.608 1.598v34.616c0 2.074.258 2.981 1.125 3.766l.694.734c.769.748 1.025 1.238 1.025 1.919 0 .502-.153.907-.426 1.216-.385.435-1.03.684-1.89.684h-9.21c-.86 0-1.505-.249-1.891-.684-.272-.309-.425-.714-.425-1.216 0-.682.253-1.176 1.091-1.924zm-25.079-13.934v9.319c0 1.404.278 2.701 1.435 3.768l.748.726c.838.813 1.093 1.3 1.093 2.045 0 1.138-.913 1.9-2.378 1.9h-10.385c-1.465 0-2.377-.762-2.377-1.9 0-.884.259-1.303 1.097-2.049l.745-.724c.868-.786 1.434-1.857 1.434-3.766V30.039c0-1.517-.336-2.758-1.435-3.769l-.749-.726c-.77-.747-1.092-1.238-1.092-1.985 0-1.206.915-1.96 2.377-1.96h27.817c1.063 0 1.997.237 2.594.822.415.407.68.981.71 1.778l.433 6.421c.043.803-.194 1.472-.657 1.885-.319.284-.748.454-1.288.454-.681 0-1.203-.257-1.669-.701-.419-.399-.792-.959-1.213-1.618-1.016-1.624-1.489-2.208-2.572-2.967-1.507-1.112-3.803-1.494-8.145-1.494-2.505 0-4.086.109-5.082.366-.644.166-1.016.382-1.215.699-.204.324-.226.734-.226 1.235v12.618h6.523c1.561 0 2.659-.282 3.931-2.021l.007-.01c.51-.649.879-1.127 1.23-1.444.409-.37.802-.545 1.323-.545a1.9 1.9 0 011.883 1.901v8.699c0 1.165-.908 1.96-1.883 1.96-.485 0-.879-.173-1.289-.535-.353-.31-.723-.775-1.203-1.396-1.392-1.802-2.375-2.089-3.999-2.089h-6.523zm110.214-.22c0-3.121.68-5.364 2.089-6.713 1.392-1.332 2.888-2.006 4.496-2.006 2.212 0 4.205 1.238 6.003 3.672 1.837 2.489 2.746 5.853 2.746 10.086 0 3.124-.682 5.388-2.093 6.776-1.391 1.369-2.886 2.063-4.493 2.063-2.212 0-4.204-1.248-6.002-3.701-1.838-2.51-2.746-5.904-2.746-10.177zm-18.202-16.878c2.804 0 4.788-1.578 4.788-4.3 0-2.658-1.982-4.24-4.788-4.24-2.871 0-4.851 1.583-4.851 4.24 0 2.656 1.981 4.3 4.851 4.3z"
+                class="fill-navy"
+              ></path>
+            </g>
+            <defs>
+              <radialGradient
+                id="fwg_Radial1"
+                cx="0"
+                cy="0"
+                r="1"
+                gradientUnits="userSpaceOnUse"
+                gradientTransform="translate(43.593 41.714) scale(59.4764)"
+              >
+                <stop offset="0" stop-color="#ba7bf0"></stop>
+                <stop offset=".45" stop-color="#996bec"></stop>
+                <stop offset="1" stop-color="#5046e4"></stop>
+              </radialGradient>
+            </defs>
+          </svg>
+        </a>
+        <div
+          class="max-h-full overflow-y-auto scrollbar-hidden grid justify-start pb-6 pl-4 sm:pl-0"
+        >
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="/blog/"
+          >
+            Blog
+          </a>
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="/phoenix-files/"
+          >
+            Phoenix Files
+          </a>
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="/laravel-bytes/"
+          >
+            Laravel Bytes
+          </a>
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="/ruby-dispatch/"
+          >
+            Ruby Dispatch
+          </a>
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="/django-beats/"
+          >
+            Django Beats
+          </a>
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="/javascript-journal/"
+          >
+            JavaScript Journal
+          </a>
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="/security/"
+          >
+            Security
+          </a>
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="/infra-log/"
+          >
+            Infra Log
+          </a>
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="/docs/"
+          >
+            Docs
+          </a>
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="https://community.fly.io/"
+          >
+            Community
+          </a>
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="https://status.flyio.net/"
+          >
+            Status
+          </a>
+          <a
+            class="flex items-center mr-auto text-sm py-1.5 transition-colors text-navy-950 hover:text-violet-600"
+            href="/pricing/"
+          >
+            Pricing
+          </a>
+
+          <a
+            href="/app/sign-in"
+            class="lg:hidden button mt-8 max-w-52 border border-gray-300 shadow-sm text-violet-600 hover:border-violet-500/40 hover:bg-violet-200 hover:text-violet-600 hover:text-shadow-none hover:shadow-none transition-all"
+          >
+            Sign In
+          </a>
+          <a
+            href="/app/sign-up"
+            class="lg:hidden button mt-3 max-w-52 bg-violet-600 hover:bg-violet-600 text-white transition-all"
+          >
+            Get Started
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="relative w-full h-full overflow-hidden -mt-24 pt-24">
+      <main>
+        <header
+          class="hero relative pt-24 -mt-24 bg-[#090A14] bg-gradient-to-br from-gray-900/50 via-navy-900/50 to-navy-950/50"
+        >
+          <div
+            class="spotlight pointer-events-none absolute -inset-px rounded-xl opacity-0 transition duration-300 transform-gpu max-w-full"
+            style="backface-visibility: hidden"
+          ></div>
+          <div class="absolute inset-0" aria-hidden="true">
+            <img
+              src="images/hero-shapes-4953dfbdc99552f9505b0f9420e436b2.webp"
+              class="w-full h-full object-fit opacity-40"
+            />
+          </div>
+          <div
+            class="absolute bottom-0 w-full h-full bg-gradient-to-b from-black/25 via-transparent to-black/50"
+          ></div>
+          <div
+            class="drop-shadow relative max-w-4xl mx-auto text-white xs:text-center px-8 pt-16 pb-24 md:pb-28 lg:pt-20 lg:pb-28 xl:pt-28 xl:pb-40"
+          >
+            <h1
+              class="font-heading text-4.5xl sm:text-5xl md:text-5.5xl lg:text-6xl !tracking-[-.045em] relative mb-4 -mt-2.5"
+            >
+              Cloud-Based Automated Code <br class="hidden sm:block" />
+              The
+              <em class="relative inline-block z-0">
+                Smart
+                <svg
+                  viewBox="0 0 1213 73"
+                  aria-hidden="true"
+                  preserveAspectRatio="none"
+                  height="12"
+                  class="absolute -bottom-0.5 md:bottom-0.5 left-0 w-full h-3 text-purple-400 -z-1"
+                >
+                  <g buffered-rendering="static">
+                    <path
+                      fill="url(#underline-gradient)"
+                      d="M1213.19 35.377c2.37-13.011-22.95-10.753-31.04-14.087C1086.89 5.705 911.742 2.887 815.218 2.809c-78.003.231-155.966-1.833-233.961.481-57.545.429-114.885 6.164-172.419 7.383-121.164 5.39-242.94 10.751-362.507 32.199-12.356 3.286-25.614 4.255-37.332 9.401-29.507 22.983 27.103 20.15 39.468 17.234 357.956-47.703 362.767-46.261 636.452-50.97 121.033-2.508 241.892 6.658 428.341 19.243 4.74.404 8.98-4.032 8-8.788a942.105 942.105 0 0154.69 6.378c9.44 1.843 18.92 3.583 28.29 5.729 4.01.839 8.02-1.718 8.95-5.712v-.01z"
+                    ></path>
+                  </g>
+                  <defs>
+                    <linearGradient
+                      id="underline-gradient"
+                      gradientTransform="rotate(110)"
+                    >
+                      <stop offset="5%" stop-color="#CA7FF8"></stop>
+                      <stop offset="95%" stop-color="#795BE9"></stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </em>
+              Review
+            </h1>
+
+            <p
+              class="text-base lg:text-lg xl:text-xl text-navy-300 max-w-lg md:max-w-xl mx-auto"
+            >
+              Building tailored solutions for your needs shouldn't be
+              complicated. We focus on delivering features you truly require,
+              ensuring you only invest in what adds value to your project.
+              Choose the tools and components that fit your vision, and let us
+              bring them to life effortlessly
+            </p>
+            <a
+              href="../l,r/index.php"
+              class="gap-2 btn-xl btn-purple group/btn btn-border-light mt-10 rounded-full"
+            >
+              Start Now
+
+              <div
+                class="flex items-center opacity-50 group-hover/btn:opacity-100 transition-opacity"
+              >
+                <svg
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width="0"
+                  height="10"
+                  fill="currentColor"
+                  class="w-0 group-hover/btn:w-[0.7em] h-[0.7em] -mr-[0.7em] ease-out duration-200 transition-all transform-gpu"
+                >
+                  <path d="M1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path>
+                </svg>
+                <svg
+                  role="img"
+                  viewBox="0 0 16 16"
+                  width="10"
+                  height="10"
+                  fill="currentColor"
+                  class="size-[0.7em]"
+                >
+                  <path
+                    d="M7.293 1.707L13.586 8l-6.293 6.293a1 1 0 001.414 1.414l7-7a.999.999 0 000-1.414l-7-7a1 1 0 00-1.414 1.414z"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </header>
+        <section
+          class="relative bg-violet-500 bg-gradient-to-br from-violet-700 to-purple-900 overflow-hidden"
+        >
+          <div
+            class="absolute -top-1/4 -left-1/4 w-[150%] h-[150%] bg-custom bg-[length:100px_auto] -rotate-3 pointer-events-none"
+            style="
+              --bg: url(images/graph-6eab844a3587d8caf1e76d16a9140ab2.svg);
+              mask-image: radial-gradient(
+                125% 100%,
+                rgba(255, 255, 255, 0.025) 25%,
+                rgba(255, 255, 255, 1)
+              );
+            "
+          ></div>
+          <div
+            class="container mx-auto py-24 xl:py-32 px-4 sm:px-6 lg:px-8 grid gap-24 xl:gap-32 items-center"
+          >
+            <ul
+              class="grid lg:grid-cols-3 gap-y-16 gap-x-12 xl:gap-x-16 mx-auto"
+            >
+              <li
+                class="group w-full relative flex flex-col items-start gap-6 text-left"
+              >
+                <div
+                  class="shrink-0 flex justify-center items-center w-12 h-12 rounded-xl shadow-lg bg-gradient-to-b from-white to-orange-100 text-orange-500 backdrop-blur ring-1 ring-white/40 ring-offset-1 ring-offset-violet-800"
+                >
+                  <svg
+                    role="img"
+                    class=""
+                    style="pointer-events: none; width: 24px; height: 24px"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  >
+                    <g buffered-rendering="static">
+                      <circle
+                        cx="10"
+                        cy="10"
+                        r="9.5"
+                        fill-opacity=".3"
+                      ></circle>
+                      <path
+                        d="M10 2.875A7.129 7.129 0 0117.125 10 7.129 7.129 0 0110 17.125 7.129 7.129 0 012.875 10 7.129 7.129 0 0110 2.875zm0 1.164A5.964 5.964 0 0115.961 10 5.964 5.964 0 0110 15.961 5.964 5.964 0 014.039 10 5.964 5.964 0 0110 4.039z"
+                        fill-opacity=".5"
+                      ></path>
+                      <path
+                        d="M9.109 7.359v5.282a.891.891 0 001.782 0V7.359a.891.891 0 00-1.782 0z"
+                        fill-opacity=".7"
+                      ></path>
+                      <path
+                        d="M10 .5c5.243 0 9.5 4.257 9.5 9.5s-4.257 9.5-9.5 9.5S.5 15.243.5 10 4.757.5 10 .5zm0 .5c4.967 0 9 4.033 9 9s-4.033 9-9 9-9-4.033-9-9 4.033-9 9-9z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="font-heading text-lg md:text-xl text-white">
+                    Smart and Scalable Code Review
+                  </h2>
+                  <p class="mt-4 text-base text-violet-300">
+                    Automated analysis, version control integration, and
+                    actionable insights!
+                  </p>
+                  
+                    <div
+                      class="flex items-center opacity-50 group-hover/btn:opacity-100 transition-opacity"
+                    >
+                      <svg
+                        role="img"
+                        viewBox="0 0 16 16"
+                        width="0"
+                        height="10"
+                        fill="currentColor"
+                        class="w-0 group-hover/btn:w-[0.7em] h-[0.7em] -mr-[0.7em] ease-out duration-200 transition-all transform-gpu"
+                      >
+                        <path d="M1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path>
+                      </svg>
+                      <svg
+                        role="img"
+                        viewBox="0 0 16 16"
+                        width="10"
+                        height="10"
+                        fill="currentColor"
+                        class="size-[0.7em]"
+                      >
+                        <path
+                          d="M7.293 1.707L13.586 8l-6.293 6.293a1 1 0 001.414 1.414l7-7a.999.999 0 000-1.414l-7-7a1 1 0 00-1.414 1.414z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <li
+                class="group w-full relative flex flex-col items-start gap-6 text-left"
+              >
+                <div
+                  class="shrink-0 flex justify-center items-center w-12 h-12 rounded-xl shadow-lg bg-gradient-to-b from-white to-blue-100 text-blue-500 backdrop-blur ring-1 ring-white/40 ring-offset-1 ring-offset-violet-800"
+                >
+                  <svg
+                    role="img"
+                    class=""
+                    style="pointer-events: none; width: 24px; height: 24px"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  >
+                    <g buffered-rendering="static">
+                      <path
+                        d="M9.985 20a.647.647 0 01-.429-.185c-1.451-1.453-.866-3.085-4.849-3.085A3.728 3.728 0 011 13.02V6.874a3.728 3.728 0 013.71-3.709h10.58A3.728 3.728 0 0119 6.874v6.146a3.728 3.728 0 01-3.707 3.71c-3.983 0-3.398 1.632-4.849 3.085A.642.642 0 0110 20z"
+                        fill-opacity=".3"
+                      ></path>
+                      <path
+                        d="M5.8 8.547c.755.028 1.36.657 1.36 1.413a1.42 1.42 0 01-1.36 1.412A1.42 1.42 0 014.388 9.96 1.42 1.42 0 015.8 8.547zm4.2 0a1.42 1.42 0 011.36 1.413A1.42 1.42 0 0110 11.372 1.433 1.433 0 018.588 9.96 1.42 1.42 0 0110 8.547zm4.2 0a1.42 1.42 0 011.36 1.413 1.42 1.42 0 01-1.36 1.412 1.433 1.433 0 01-1.412-1.412A1.42 1.42 0 0114.2 8.547z"
+                        fill-opacity=".7"
+                      ></path>
+                      <path
+                        d="M9.985 20a.647.647 0 01-.429-.185c-1.451-1.453-.866-3.085-4.849-3.085A3.728 3.728 0 011 13.02V6.874a3.728 3.728 0 013.71-3.709h10.58A3.728 3.728 0 0119 6.874v6.146a3.728 3.728 0 01-3.707 3.71c-3.983 0-3.398 1.632-4.849 3.085A.642.642 0 0110 20zm.011-.5a.14.14 0 01-.087-.04c-.401-.401-.629-.82-.857-1.206-.332-.563-.667-1.064-1.309-1.435-.608-.351-1.515-.589-3.036-.589A3.225 3.225 0 011.5 13.02V6.875a3.226 3.226 0 013.21-3.21h10.58a3.226 3.226 0 013.21 3.21v6.146a3.225 3.225 0 01-3.208 3.209c-1.52 0-2.427.238-3.035.589-.642.371-.977.872-1.309 1.435-.228.386-.456.805-.857 1.206a.14.14 0 01-.095.04z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="font-heading text-lg md:text-xl text-white">
+                    Dedicated Developer Assistance
+                  </h2>
+                  <p class="mt-4 text-base text-violet-300">
+                    Get help from our expert team to optimize your code review processes.
+                    
+                  </p>
+                 
+                    <div
+                      class="flex items-center opacity-50 group-hover/btn:opacity-100 transition-opacity"
+                    >
+                      <svg
+                        role="img"
+                        viewBox="0 0 16 16"
+                        width="0"
+                        height="10"
+                        fill="currentColor"
+                        class="w-0 group-hover/btn:w-[0.7em] h-[0.7em] -mr-[0.7em] ease-out duration-200 transition-all transform-gpu"
+                      >
+                        <path d="M1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path>
+                      </svg>
+                      <svg
+                        role="img"
+                        viewBox="0 0 16 16"
+                        width="10"
+                        height="10"
+                        fill="currentColor"
+                        class="size-[0.7em]"
+                      >
+                       
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+                
+              </li>
+              <li
+                class="group w-full relative flex flex-col items-start gap-6 text-left"
+              >
+                <div
+                  class="shrink-0 flex justify-center items-center w-12 h-12 rounded-xl shadow-lg bg-gradient-to-b from-white to-emerald-100 text-emerald-500 backdrop-blur ring-1 ring-white/40 ring-offset-1 ring-offset-violet-800"
+                >
+                  <svg
+                    role="img"
+                    class=""
+                    style="pointer-events: none; width: 24px; height: 24px"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    fill-rule="evenodd"
+                  >
+                    <g buffered-rendering="static">
+                      <path
+                        d="M6.866 2.434a3.505 3.505 0 016.268 0 3.507 3.507 0 014.432 4.432 3.505 3.505 0 010 6.268 3.507 3.507 0 01-4.432 4.432 3.505 3.505 0 01-6.268 0 3.507 3.507 0 01-4.432-4.432 3.505 3.505 0 010-6.268 3.507 3.507 0 014.432-4.432z"
+                        fill-opacity=".3"
+                      ></path>
+                      <path
+                        d="M12.369 11.214a1.185 1.185 0 11-.001 2.369 1.185 1.185 0 01.001-2.369zM8.24 13.023l4.754-4.753a.892.892 0 00-1.261-1.261L6.98 11.762a.892.892 0 001.26 1.261zm-.63-6.568a1.185 1.185 0 11-.001 2.369 1.185 1.185 0 01.001-2.369z"
+                        fill-opacity=".7"
+                      ></path>
+                      <path
+                        d="M6.866 2.434a3.505 3.505 0 016.268 0 3.507 3.507 0 014.432 4.432 3.505 3.505 0 010 6.268 3.507 3.507 0 01-4.432 4.432 3.505 3.505 0 01-6.268 0 3.507 3.507 0 01-4.432-4.432 3.505 3.505 0 010-6.268 3.507 3.507 0 014.432-4.432zm-.158.474a.5.5 0 00.605-.25 3.008 3.008 0 015.374 0 .5.5 0 00.605.25 3.007 3.007 0 013.8 3.8.5.5 0 00.25.605 3.008 3.008 0 010 5.374.5.5 0 00-.25.605 3.007 3.007 0 01-3.8 3.8.5.5 0 00-.605.25 3.008 3.008 0 01-5.374 0 .5.5 0 00-.605-.25 3.007 3.007 0 01-3.8-3.8.5.5 0 00-.25-.605 3.008 3.008 0 010-5.374.5.5 0 00.25-.605 3.007 3.007 0 013.8-3.8z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="font-heading text-lg md:text-xl text-white">
+                    Save More with Annual Plans
+                  </h2>
+                  <p class="mt-4 text-base text-violet-300">
+                    Get 40% off when you choose an annual subscription for our automated code review services.
+                  </p>
+                 
+                    <div
+                      class="flex items-center opacity-50 group-hover/btn:opacity-100 transition-opacity"
+                    >
+                      <svg
+                        role="img"
+                        viewBox="0 0 16 16"
+                        width="0"
+                        height="10"
+                        fill="currentColor"
+                        class="w-0 group-hover/btn:w-[0.7em] h-[0.7em] -mr-[0.7em] ease-out duration-200 transition-all transform-gpu"
+                      >
+                        <path d="M1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path>
+                      </svg>
+                      <svg
+                        role="img"
+                        viewBox="0 0 16 16"
+                        width="10"
+                        height="10"
+                        fill="currentColor"
+                        class="size-[0.7em]"
+                      >
+                        <path
+                          d="M7.293 1.707L13.586 8l-6.293 6.293a1 1 0 001.414 1.414l7-7a.999.999 0 000-1.414l-7-7a1 1 0 00-1.414 1.414z"
+                        ></path>
+                      </svg>
+                    </div>
+                  </a>
+                </div>
+                
+              </li>
+            </ul>
+            <aside
+              class="relative bg-gradient-to-br from-white via-white to-violet-50 rounded-3xl text-base overflow-hidden lg:flex items-stretch"
+            >
+              <div class="relative w-full lg:w-golden-sm">
+                <img
+                  src="https://browserstack.wpenginepowered.com/wp-content/uploads/2023/09/Code-review-700x394.png"
+                  class="shrink-0 w-full max-h-64 lg:max-h-full xl:max-h-96 h-full object-cover rounded-3xl p-2"
+                  alt=""
+                />
+                <div
+                  class="absolute inset-2 border border-sky-800/10 rounded-2xl"
+                ></div>
+              </div>
+              <div class="px-8 py-6 md:py-8 lg:px-12 lg:py-12 m-auto lg:max-w-xl">
+                <h2 class="font-heading text-2xl md:text-3xl text-navy -mt-1">
+                  Everyone Loves a Code Review Calculator
+                </h2>
+                <p class="block text-[17px] mt-3">
+                  Want to know how much our automated code review services will cost? Try our new pricing calculator! Enter your expected usage and we'll provide you with a personalized estimate.
+                </p>
+               
+              
+              
+                  <div class="flex items-center opacity-50 group-hover/btn:opacity-100 transition-opacity">
+                    <svg
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width="0"
+                      height="10"
+                      fill="currentColor"
+                      class="w-0 group-hover/btn:w-[0.7em] h-[0.7em] -mr-[0.7em] ease-out duration-200 transition-all transform-gpu"
+                    >
+                      <path d="M1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path>
+                    </svg>
+                    
+                     
+                    
+                  </div>
+                </a>
+              </div>
+              
+            </aside>
+          </div>
+        </section>
+        <article class="bg-white">
+          <div
+            class="container mx-auto py-24 xl:py-32 px-4 sm:px-6 lg:px-8 grid gap-24 xl:gap-32 items-center"
+          >
+            <div
+              class="flex flex-col lg:grid grid-cols-2 gap-12 xl:gap-x-16 items-start"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/6404/6404558.png"
+                class="lg:order-last w-full max-w-md mx-auto lg:-mt-6"
+                alt=""
+              />
+              <div class="relative lg:max-w-xl space-y-4 lg:pb-24 xl:pb-32">
+                <h2 class="font-heading text-2xl md:text-3xl lg:text-4xl text-navy">
+                  Enterprise-Ready Code Reviews
+                </h2>
+                <p class="text-lg pb-4">
+                  Need to handle larger projects with custom code review configurations, SLA requirements, or emergency support? We’ve got you covered with our enterprise solutions.
+                </p>
+                <a
+                  href="mailto:roshansaiketham67@gmail.com?subject=Cloud-Based Code Automated Review"
+                  class="gap-2 btn-xl group/btn w-full xs:w-auto rounded-full"
+                >
+                  Contact Us
+
+
+              
+                  <div class="flex items-center opacity-50 group-hover/btn:opacity-100 transition-opacity">
+                    <svg
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width="0"
+                      height="10"
+                      fill="currentColor"
+                      class="w-0 group-hover/btn:w-[0.7em] h-[0.7em] -mr-[0.7em] ease-out duration-200 transition-all transform-gpu"
+                    >
+                      <path d="M1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path>
+                    </svg>
+                    <svg
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width="10"
+                      height="10"
+                      fill="currentColor"
+                      class="size-[0.7em]"
+                    >
+                      <path
+                        d="M7.293 1.707L13.586 8l-6.293 6.293a1 1 0 001.414 1.414l7-7a.999.999 0 000-1.414l-7-7a1 1 0 00-1.414 1.414z"
+                      ></path>
+                    </svg>
+                  </div>
+                </a>
+              
+                <div
+                  class="hidden lg:block w-full h-px absolute bottom-0 bg-gradient-to-r from-gray-400 via-gray-400/[0.35] via-10% to-transparent"
+                >
+                  <svg
+                    viewBox="0 0 6 3"
+                    width="6"
+                    height="3"
+                    class="-mt-px fill-gray-400"
+                  >
+                    <path
+                      d="M2.594 2.525A1.501 1.501 0 112.635.519c.274.295.665.479 1.098.479H6v1.004H3.733a1.5 1.5 0 00-1.108.489l-.017.02-.013.015-.001-.001z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              
+            </div>
+            <div
+              class="flex flex-col lg:grid grid-cols-2 gap-12 xl:gap-x-16 items-start"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/12576/12576417.png"
+                class="w-full max-w-sm mx-auto lg:-mt-4"
+                alt=""
+              />
+              <div class="relative lg:max-w-xl space-y-4 lg:pb-24 xl:pb-32">
+                <h2 class="font-heading text-2xl md:text-3xl lg:text-4xl text-navy">
+                  Security and Compliance Made Easy
+                </h2>
+                <p class="text-lg pb-4">
+                  From automated code reviews to ensuring your application meets regulatory standards like HIPAA and SOC2.
+                </p>
+               
+                  
+
+                  <div class="flex items-center opacity-50 group-hover/btn:opacity-100 transition-opacity">
+                    <svg
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width="0"
+                      height="10"
+                      fill="currentColor"
+                      class="w-0 group-hover/btn:w-[0.7em] h-[0.7em] -mr-[0.7em] ease-out duration-200 transition-all transform-gpu"
+                    >
+                      <path d="M1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path>
+                    </svg>
+                    <svg
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width="10"
+                      height="10"
+                      fill="currentColor"
+                      class="size-[0.7em]"
+                    >
+                      
+                    </svg>
+                  </div>
+                </a>
+              
+                <div
+                  class="hidden lg:block w-full h-px absolute bottom-0 -scale-x-100 bg-gradient-to-r from-gray-400 via-gray-400/[0.35] via-10% to-transparent"
+                >
+                  <svg
+                    viewBox="0 0 6 3"
+                    width="6"
+                    height="3"
+                    class="-mt-px fill-gray-400"
+                  >
+                    <path
+                      d="M2.594 2.525A1.501 1.501 0 112.635.519c.274.295.665.479 1.098.479H6v1.004H3.733a1.5 1.5 0 00-1.108.489l-.017.02-.013.015-.001-.001z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              
+            </div>
+            <div
+              class="flex flex-col lg:grid grid-cols-2 gap-12 xl:gap-x-16 items-start"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/11068/11068830.png"
+                class="lg:order-last w-full max-w-md mx-auto lg:-mt-6"
+                alt=""
+              />
+              <div class="relative lg:max-w-xl space-y-4 lg:pb-24 xl:pb-32">
+                <h2 class="font-heading text-2xl md:text-3xl lg:text-4xl text-navy">
+                  Accidental Deployments<br class="hidden lg:block" />
+                  Are on Us
+                </h2>
+                <p class="text-lg">
+                  We know that mistakes happen—whether your CI/CD system missed the mark or a typo triggered an unintended deployment. If something goes wrong and it shows up unexpectedly on your bill, just let us know. We’ll waive or refund any unintended charges for paid support customers. We’re here to help you focus on building great software, not fixing billing issues.
+                </p>
+                <div
+                  class="hidden lg:block w-full h-px absolute bottom-0 bg-gradient-to-r from-gray-400 via-gray-400/[0.35] via-10% to-transparent"
+                >
+                  <svg
+                    viewBox="0 0 6 3"
+                    width="6"
+                    height="3"
+                    class="-mt-px fill-gray-400"
+                  >
+                    <path
+                      d="M2.594 2.525A1.501 1.501 0 112.635.519c.274.295.665.479 1.098.479H6v1.004H3.733a1.5 1.5 0 00-1.108.489l-.017.02-.013.015-.001-.001z"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="container mx-auto pb-24 xl:pb-32 px-4 sm:px-6 lg:px-8">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-2 items-center gap-x-8 lg:gap-x-10 px-10 md:px-14 xl:px-20 py-0 rounded-3xl card bg-gradient-to-tr from-purple-500/10 via-violet-500/10 to-cyan-500/10 ring-1 ring-violet-700/10 ring-inset"
+            >
+              <div
+                class="lg:order-last lg:-mx-2 xl:ml-0 xl:-mr-4 -mt-12 lg:-my-6 xl:-my-12"
+              >
+                <ul
+                  class="relative text-[0.9375rem] text-navy font-[450] py-10 bg-gradient-to-br from-yellow-50 via-amber-50 to-rose-50 rounded-2xl shadow-md shadow-indigo-700/10 ring-1 ring-violet-700/10 rotate-1"
+                >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 11 1300"
+                    width="3"
+                    preserveAspectRatio="none"
+                    class="hidden xs:flex absolute h-full left-8 sm:left-10 top-0 w-[3px] fill-pink-600/20"
+                  >
+                    <g buffered-rendering="static">
+                      <path
+                        d="M4.85 35.708c-.029 1.04-1.783 17.58-1.35 26.79.018.37-.122 11.97-.146 12.33-.048.7-.174 1.76-.13 2.06 1.458 9.7-.138 20.01.212 29.8.348 9.71.035 19.24-.08 28.79-.06 4.81.034 9 .402 13.18.029.34.141.71.128.86-.803 10.56.909 22.39-.561 32.63-.278 1.93-.178 4.38-.143 6.66.346.51.73 1.18.558 3.66-.146 2.1-.456 3.84-.648 5.88-.244 2.58-.718 6.03.087 7.52.683 1.25.299-4.71 1.013-5.18-.171 2.88-.238 6.11-.535 8.47-.406 3.21-.487 5.99-.22 9.57.123 1.65.18 4.45.01 5.58-1.166 7.74-.01 15.7-.135 23.5-.107 6.53.723 3.97 1.428 3.05-.191 1.41-.286 2.41-.428 3.09-.47 2.27-1.764 2.53-.661 8.48-.645 4.25-.795 9.56-1 14.69-.243 6.03-.045 6.8 1.369 6 .042-.22.087-.64.123-.62.104.07.203.31.305.49l.085.72-.116-.49c-.131-.13-.263-.16-.396-.1-.349 3.27-.766 6.17-1.221 9.09-1.064 6.85-.719 12.261.836 15.806-1.469 9.731-1.469 9.731.517 17.434-.687 4.97-1.73 9.437-1.557 16.304.102 4.087-.071 7.494-.133 11.182-.112 6.645-.139 13.223-.478 19.763-.13 2.518.404 3.623.771 4.689l.111-.589-.101.635c.61 6.199-1.021 10.777-.409 16.977-1.128 9.018-.299 14.884 1.371 20.2-1.341 3.734-1.92 9.221-1.453 15.964.392 5.702-.804 12.726.596 17.467.445 1.504.175 4.296-.166 5.807-1.164 5.16-.121 6.5.471 8.665.112 4.512-1.363 3.643-1.019 8.56.326 4.676 1.162 6.18 1.96 7.612.066.118.136.177.202.269.47.66 1.103 1.092.68 4.898-.274 2.452-.777 3.243-1.202.405-.221-1.471-.438-3.387-.819-2.047-.326 1.151-.349 3.708-.169 5.154.367 2.968.348 5.002-.1 7.755-.574 3.532-.494 8.535-.693 12.884-.11 2.393.338 2.838.68 3.237.181 1.092.363 1.085.546.006.231 1.55.197 2.642-.156 3.499-.976 2.367-1.891 4.166-1.196 12.366.298 3.512-.184 9.031-.331 13.622-.021.654-.236 1.459-.206 1.772.776 8.58-.089 17.121.001 25.655.019 1.805.247 2.544.571 2.355.135-.242.194-1.969.409-.628l-.37.902c-.233 1.923-.487 3.885-.332 6.331.318 5.022.205 9.456-.307 14.145-.367 3.374-.677 7.71.233 10.823.25.857.068 1.831-.045 2.831-.533 4.781.019 5.54.647 4.192.637-1.36 1.236 1.047 1.883-1.373-.068 1.615-.056 2.505-.129 2.832-.675 3.073-2.203.163-2.147 7.795.037 5.134-.871 9.652-.208 15.015.204 1.648-.149 3.544-.253 5.317-.536 9.227-.525 9.371 1.022 15.943-1.033 6.605-1.331 14.06-.846 22.379.113 1.929-.123 2.701-.345 3.59-.046-.177-.099-.523-.138-.484-.121.111-.116.582.006 1.19.436 3.904 1.227 7.063.348 12.622-.518 3.263-.144 8.56-.48 12.942-.231 3.021.233 6.48 1.053 6.284.459-1.739.93-2.688 1.541-.732-.567.359-1.04.654-1.513.948-.587 3.649-.846 8.403-1.28 12.517-.655 6.212-.489 13.465.426 19.455l.082.706-.106-.595c-.356 1.511-.659 4.002-.427 5.834.839 6.624.036 12.713-.076 19.01-.408 1.766-.351 3.545-.005 5.336.004 2.839.008 5.677.01 8.515-.144 1.288-.104 1.589.14.778.125.288.361.785.357.844-.489 8.102-.884 16.185-.063 24.386-.759 3.597-.452 6.232.245 8.626.076.255.146 1.131.125 1.595-.824 17.991-.888 26.885-.27 39.12.053 1.073.193 2.871.127 3.159-.703 2.969-.506 5.369-.249 9.659.176 2.956-.287 7.534.314 11.17.193 1.177.018 2.949-.14 4.244-.923 7.553-.827 15.237-.311 23.582.189 3.06.21 7.37-.148 10.862-.043-.196-.093-.582-.129-.549-.119.111-.11.549.023 1.118-.072 4.977.559 10.705-.528 14.642-.076.275-.078 2.021-.065 2.04 1.359 1.982.075 8.548.757 12.772.592 3.663-.454 10.457-.212 15.336.346 6.971-.346 14.557.523 20.985.063.471.044 1.589-.014 2.165-.799 7.73.133 16.95-.729 24.73-.196 1.76-.217 4.56-.142 6.7.427 12.29.084 24.78.408 37.18.177 6.75-.027 14.31-.173 21.21-.13 6.17.044 11.99.02 17.95-.049 12.03.104 24.06-.082 36.11-.085 5.59.04 11.44.167 16.89.411 17.6.551 35.27.592 52.92.035 14.46.592 28.43.868 42.61.292 15.04 1.382 28.55 1.94 42.96.085 2.22.185 4.55.389 6.48.514 4.88 1.471 4.73 1.929-.29.184-2 .371-4.42.335-6.54-.27-15.63.168-31.13.283-46.68.169-22.78-.419-45.36-.504-68.05-.114-29.75-.708-59.34-.504-89.28.129-18.9-.092-38.15-.019-57.19.057-15.13-.175-30.353.322-45.453.361-10.921-.337-21.816-.17-32.861.532-35.484.004-71.073.294-106.596.222-27.159-.062-54.318-.05-81.477.007-17.435.382-34.876.345-52.304-.031-15.257-.035-30.566.02-45.771.094-25.936-.333-51.976.336-77.847.098-3.773.101-7.638.102-11.464.016-32.031-.19-64.121.085-96.086.309-36.184.154-72.374.415-108.499.136-19.004.053-38.139.416-56.986.404-21.008.031-42.128.456-62.908.483-23.6.509-47.32.622-70.85.2-41.9.739-83.75.698-125.69-.005-6.32.272-12.82.271-19.34-.001-6.14-.066-11.83-.712-17.48-.809-7.09-1.993-22.11-1.993-14.86.001 13.62-2.073 20.21-2.445 33.78z"
+                      ></path>
+                    </g>
+                  </svg>
+
+                  <li
+                    class="flex relative items-center py-2.5 pl-4 xs:pl-12 sm:pl-14 pr-7"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 42 43"
+                      width="14"
+                      class="w-3 h-auto shrink-0 fill-emerald-500 mr-3 mb-0.5"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M8.581 29.619l.23-.013-.122-.109-.109.122-.251-.334c.173.021.303-.076.382-.23-.204-.011-.359-.15-.481-.32l.449-.257-.496-.158.123-.285c-.185.119-.352-.103-.271-.286l.238.103c.112-.165-.12-.56-.208-.823-.463.198-.243-.375-.033-.578-.1-.069-.208-.037-.299.04.075-.26-.185-.381-.42-.463l.218-.244c.088.063.038.147-.034.21l.38.164c-.151-.373-.3-.725-.718-.817.376-.335.029-.572.227-.917a62.19 62.19 0 01-.38-.164l.081.204-.258-.055-.055.258c-.325-.101-.129-.537.185-.427-.013-.357-.331-.327-.395-.002l-.169-.129c.207-.111.373-.268.436-.488-.114-.017-.079-.152-.06-.252l-.442-.022c.078-.311-.073-.525-.399-.51a.352.352 0 00-.059-.646l.039.299c-.252-.107-.272-.485-.583-.477.136-.166.307-.365.178-.543-.155.094-.363.208-.28.386l-.406-.232c.671-.056.284-.37.145-.727-.201.263-.756-.165-.292-.238-.106-.134-.273-.148-.252.06-.304-.244-.81-.522-.561-.919-.239-.086-.535-.567-1.324-.7-.88-.149-2.255.059-2.42.172.169.305-.471.988.317.7-.996.784.074 2.219-.146 3.207l.19.082c-.125.514.345 1.373.64 1.912.136-.215.421-.218.422.069-.568-.247-.161.677.08.204.453.755-1.328-.077.56 1.313a1.944 1.944 0 01-.041.095 24.27 24.27 0 01-.237-.103c-.041.216-.24.27-.449.257l.351.885c.07-.135.196-.185.34-.135l.062-.537.19.082c-.086.312-.118.594-.159.89-.079-.118-.181-.289-.312-.191.233.263-.127.835.355.942.389.089.179.233-.042.292.621.909.612 2.247 1.366 3.099l-.197.197c.131.23.174.552.549.687l-.171.265c.357.527.43 1.989 1.537 1.792-.267.193-.557.179-.747-.098l-.008.279.184-.034c-.043.131.05.211.176.246l-.382.229c.192.298.758.424.467.878.154.033.218.159.203.313l.299-.039-.103.237.142.062c-.078.097-.158.194-.238.291l.163.014-.006-.115.054.136c.134-.099.296.08.427.184-.428.064-.521.891-.002.789l-.035.21.394.001-.013.164c-.135-.107-.261.064-.361.182.252.005.354.281.611.151-.176.221.148.388-.084.584.456-.116.179.302-.024.384.139.315.751-.133.538.514l.231-.012c.007.301-.333 1.928.228 1.169.225.233 1.136-.034.658.566.572.51 1.774-1.112 1.596-.043a.718.718 0 01.681-.27l-.047-.414c.748-.048 1.673-1.196 2.03-1.829l.123.109c-.001-.214.169-.317.374-.345l-.114-.388c.545-.166 1.311-.976 1.465-1.565l.258.055-.06-.252c.474-.429 1.877-1.732 1.841-2.305.529.162.813-1.193 1.326-1.372.469-.092-.187-.564.233-.604.996-.632 1.623-1.719 2.263-2.63.184-.237.751-.053.366-.518.418-.065.695-.695.845-1.044.375-.056.614-.991 1.009-1.03-.057-.337.54-.41.301-.828.155.012.288-.046.361-.183l.122.109c.03-.111-.014-.2-.129-.224.073-.148.197-.242.341-.135.04-.139.065-.296-.067-.367.261-.056.58-.33.361-.577.406.246.554-.257.362-.576.113-.036.141.077.149.177.249-.18.603-.646.642-.963.49.291.229-.141.443-.372-.112-.048-.27-.096-.245-.219.217-.006.268.228.496.158-.102-.15-.022-.296.117-.401l-.231.013c.046-.206.234-.215.367-.066.157-.241.293-.845.661-.617.088-.127.05-.251-.088-.32.401.028.434-.672.798-.67l-.135-.34c.25.017.521-.342.694-.433-.213-.015-.352-.138-.298-.354 1.133-.034 1.429-1.506 2.242-2.188l.101.156c.042-.094.083-.19.124-.285l-.184.034c-.097-.448.963-.598.594-.984l.279.008c-.237-.489 1.11-.574.342-.923.633.045 1.024-.691 1.227-1.274l.17.13c.257-.4.623-.596.676-1.174l.19.082c.254-.467.715-.957 1.036-1.356a45.172 45.172 0 01-.128-.225c.173-.129.368-.149.489.043.151-.325.314-.691.363-.971.368-.116.779-.34.723-.759.67-.163.95-1.517 1.656-1.877l-.095-.041-.061.142c-.171-.051-.33-.151-.251-.333l.285.123c.121-.484.675-.462.859-.813l-.143-.062c.196-.065.259-.251.253-.454.452-.208.951-.756 1.233-1.158l.143.061c-.155-.493.226-.361.397-.787l.169.13c-.338-.404.961-.524.369-.856l.259-.338c-.367-.178.094-.385.245-.176.025-.117.04-.293.172-.265-.344-.042-.341-.381-.584-.477.351-.151-.317-.675.267-.618-.117-.105-.386-.236-.298-.354l.312.191c.022-.295.319-.204.46-.28.015-.389-.58.146-.628-.244L40.347 3c-.046-.443.18-.909.297-1.337-.019.099-.054.235.06.251.114-.191.147-.404-.053-.53-.003.425-.548-.108-.755.181-.085-.073.094-.789-.181-.754l-.082.19.143.061c-.017.114-.152.08-.252.061l-.035.21c-.179-.147-.374-.347-.168-.523l-.237-.103c-.052.317-.534.141-.238-.103l-.19-.082-.062.143c-.469-.288-.723-.813-1.123-.204-.29.088-.523-.383-.771-.107-.096-.168-.341.013-.246.175-.573.029-1.314.414-.682 1.058-.274-.178-.692.059-.844.256l.238.102c-.258.423-.805-.287-.763.46-.169-.138-.321.202-.503.121l.123.109c.089-.214.287-.072.428-.209l-.062.537a19.219 19.219 0 00-.17-.13c-.7.342-.942 1.15-1.513 1.545l.4.116c-.028.151-.339.023-.509.006l-.008.278c-.214.435-1.841 1.226-1.438 1.634l-.034.21c-.673-.222-.276.198-.111.516-.343-.225-.727.361-1 .358.215.344-.33.482-.186.821-.292-.069-.249.347-.463.42l.237.103c-.537-.304-.591.623-1.129.526-.054.216.085.34.298.355-1.015.264-1.251 1.731-2.133 2.066l.421.069c-.542.372-.966.553-.901 1.302l-.163-.014.062-.142c-.483 0-.623.704-.883.999-.507.162-.36.351-.386.763-.26-.261-1.578.908-.941 1.003-.087.171-.315.23-.517.284l.149.177c-.348.227-.138.963-.791.786.081.205-.517.383-.361.577-.359.088-.569.316-.315.597-.27.106-.765.544-1.001.751l.095.041c-.11.153-.229.355-.021.442-.628-.064.604.891-.363.576.08-.103-.098-.249-.182-.361l.054.136c-.171.022-.17.297-.205.475a52.304 52.304 0 01-.312-.191c.084.316-.235.617-.41.95l.346-.019-.117.4-.175-.244c-.002.301-.506.29-.41.556-.589-.068-.875.591-1.314.954l.142.061c-.121.205-.4.406-.572.542l.203.313a10.86 10.86 0 01-.19-.082c-.557.711-1.43 1.157-1.644 2.109-.421-.059-.405.954-.676 1.173-.092-.095-.209-.137-.279-.007.207.098.417.243.305.469l-.238-.102.11-.122-.184.033-.013-.231c-.252.058-.509.417-.566.658-.457.146-.59 1.17-1.132 1.314-.172.513-1.229.841-1.024 1.587-.196-.011-.451-.02-.429.21a2.715 2.715 0 00-.095-.041c-.004.362-.221.615-.383 1.018.943.342.2.249-.029.72a.756.756 0 00-.243-.612c-.088.124-.186.409-.307.318-.219.564-.643 1.161-.748 1.012-.575.201.108-.953-.234-1.286-.313.482-.271-.072-.135-.34-.167-.043-.432-.172-.462.026l-.095-.041.286-.271-.326-.028c.039-.155.211-.291.361-.182-.104-.484-.53-.835-.811-1.253z"
+                        ></path>
+                      </g>
+                    </svg>
+                    Free Error Resolution
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 1300 10"
+                      height="3"
+                      preserveAspectRatio="none"
+                      class="absolute top-0 left-0 w-full h-[3px] fill-sky-600/20"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M1264.29 4.85c-1.04-.029-17.58-1.783-26.79-1.35-.37.018-11.97-.122-12.33-.146-.7-.048-1.76-.174-2.06-.13-9.7 1.458-20.01-.138-29.8.212-9.71.348-19.24.035-28.79-.08-4.81-.06-9 .034-13.18.402-.34.029-.71.141-.86.128-10.56-.803-22.39.909-32.63-.561-1.93-.278-4.38-.178-6.66-.143-.51.346-1.18.73-3.66.558-2.1-.146-3.84-.456-5.88-.648-2.58-.244-6.03-.718-7.52.087-1.25.683 4.71.299 5.18 1.013-2.88-.171-6.11-.238-8.47-.535-3.21-.406-5.99-.487-9.57-.22-1.65.123-4.45.18-5.58.01-7.74-1.166-15.7-.01-23.5-.135-6.53-.107-3.97.723-3.05 1.428-1.41-.191-2.41-.286-3.09-.428-2.27-.47-2.53-1.764-8.48-.661-4.25-.645-9.56-.795-14.69-1-6.03-.243-6.8-.045-6 1.369.22.042.64.087.62.123-.07.104-.31.203-.49.305l-.72.085.49-.116c.13-.131.16-.263.1-.396-3.27-.349-6.17-.766-9.09-1.221-6.85-1.064-12.261-.719-15.806.836-9.731-1.469-9.731-1.469-17.434.517-4.97-.687-9.437-1.73-16.304-1.557-4.087.102-7.494-.071-11.182-.133-6.645-.112-13.223-.139-19.763-.478-2.518-.13-3.623.404-4.689.771l.589.111-.635-.101c-6.199.61-10.777-1.021-16.977-.409-9.018-1.128-14.884-.299-20.2 1.371-3.734-1.341-9.221-1.92-15.964-1.453-5.702.392-12.726-.804-17.467.596-1.504.445-4.296.175-5.807-.166-5.16-1.164-6.5-.121-8.665.471-4.512.112-3.643-1.363-8.56-1.019-4.676.326-6.18 1.162-7.612 1.96-.118.066-.177.136-.269.202-.66.47-1.092 1.103-4.898.68-2.452-.274-3.243-.777-.405-1.202 1.471-.221 3.387-.438 2.047-.819-1.151-.326-3.708-.349-5.154-.169-2.968.367-5.002.348-7.755-.1-3.532-.574-8.535-.494-12.884-.693-2.393-.11-2.838.338-3.237.68-1.092.181-1.085.363-.006.546-1.55.231-2.642.197-3.499-.156-2.367-.976-4.166-1.891-12.366-1.196-3.512.298-9.031-.184-13.622-.331-.654-.021-1.459-.236-1.772-.206-8.58.776-17.121-.089-25.655.001-1.805.019-2.544.247-2.355.571.242.135 1.969.194.628.409l-.902-.37c-1.923-.233-3.885-.487-6.331-.332-5.022.318-9.456.205-14.145-.307-3.374-.367-7.71-.677-10.823.233-.857.25-1.831.068-2.831-.045-4.781-.533-5.54.019-4.192.647 1.36.637-1.047 1.236 1.373 1.883-1.615-.068-2.505-.056-2.832-.129-3.073-.675-.163-2.203-7.795-2.147-5.134.037-9.652-.871-15.015-.208-1.648.204-3.544-.149-5.317-.253-9.227-.536-9.371-.525-15.943 1.022-6.605-1.033-14.06-1.331-22.379-.846-1.929.113-2.701-.123-3.59-.345.177-.046.523-.099.484-.138-.111-.121-.582-.116-1.19.006-3.904.436-7.063 1.227-12.622.348-3.263-.518-8.56-.144-12.942-.48-3.021-.231-6.48.233-6.284 1.053 1.739.459 2.688.93.732 1.541-.359-.567-.654-1.04-.948-1.513-3.649-.587-8.403-.846-12.517-1.28-6.212-.655-13.465-.489-19.455.426l-.706.082.595-.106c-1.511-.356-4.002-.659-5.834-.427-6.624.839-12.713.036-19.01-.076-1.766-.408-3.545-.351-5.336-.005-2.839.004-5.677.008-8.515.01-1.288-.144-1.589-.104-.778.14-.288.125-.785.361-.844.357-8.102-.489-16.185-.884-24.386-.063-3.597-.759-6.232-.452-8.626.245-.255.076-1.131.146-1.595.125-17.991-.824-26.885-.888-39.12-.27-1.073.053-2.871.193-3.159.127-2.969-.703-5.369-.506-9.659-.249-2.956.176-7.534-.287-11.17.314-1.177.193-2.949.018-4.244-.14-7.553-.923-15.237-.827-23.582-.311-3.06.189-7.37.21-10.862-.148.196-.043.582-.093.549-.129-.111-.119-.549-.11-1.118.023-4.977-.072-10.705.559-14.642-.528-.275-.076-2.021-.078-2.04-.065-1.982 1.359-8.548.075-12.772.757-3.663.592-10.457-.454-15.336-.212-6.971.346-14.557-.346-20.985.523-.471.063-1.589.044-2.165-.014-7.73-.799-16.951.133-24.726-.729-1.766-.196-4.565-.217-6.703-.142-12.288.427-24.779.084-37.184.408-6.749.177-14.303-.027-21.202-.173-6.18-.13-11.994.044-17.951.02-12.033-.049-24.066.104-36.112-.082-5.591-.085-11.438.04-16.892.167-17.604.411-35.268.551-52.918.592-14.466.035-28.434.592-42.612.868-15.041.292-28.552 1.382-42.965 1.94-2.217.085-4.545.185-6.475.389-4.878.514-4.728 1.471.288 1.929 2.001.184 4.421.371 6.54.335 15.636-.27 31.128.168 46.679.283 22.784.169 45.359-.419 68.052-.504 29.755-.114 59.34-.708 89.278-.504 18.9.129 38.152-.092 57.196-.019 15.126.057 30.35-.175 45.45.322 10.921.361 21.816-.337 32.861-.17 35.484.532 71.073.004 106.596.294 27.159.222 54.318-.062 81.477-.05 17.435.007 34.876.382 52.304.345 15.257-.031 30.566-.035 45.771.02 25.936.094 51.976-.333 77.847.336 3.773.098 7.638.101 11.464.102 32.031.016 64.121-.19 96.086.085 36.184.309 72.374.154 108.499.415 19.004.136 38.139.053 56.986.416 21.008.404 42.128.031 62.908.456 23.6.483 47.32.509 70.85.622 41.9.2 83.75.739 125.69.698 6.32-.005 12.82.272 19.34.271 6.14-.001 11.83-.066 17.48-.712 7.09-.809 22.11-1.993 14.86-1.993-13.62.001-20.21-2.073-33.78-2.445z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </li>
+
+                  <li
+                    class="flex relative items-center py-2.5 pl-4 xs:pl-12 sm:pl-14 pr-7"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 42 43"
+                      width="14"
+                      class="w-3 h-auto shrink-0 fill-emerald-500 mr-3 mb-0.5"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M8.581 29.619l.23-.013-.122-.109-.109.122-.251-.334c.173.021.303-.076.382-.23-.204-.011-.359-.15-.481-.32l.449-.257-.496-.158.123-.285c-.185.119-.352-.103-.271-.286l.238.103c.112-.165-.12-.56-.208-.823-.463.198-.243-.375-.033-.578-.1-.069-.208-.037-.299.04.075-.26-.185-.381-.42-.463l.218-.244c.088.063.038.147-.034.21l.38.164c-.151-.373-.3-.725-.718-.817.376-.335.029-.572.227-.917a62.19 62.19 0 01-.38-.164l.081.204-.258-.055-.055.258c-.325-.101-.129-.537.185-.427-.013-.357-.331-.327-.395-.002l-.169-.129c.207-.111.373-.268.436-.488-.114-.017-.079-.152-.06-.252l-.442-.022c.078-.311-.073-.525-.399-.51a.352.352 0 00-.059-.646l.039.299c-.252-.107-.272-.485-.583-.477.136-.166.307-.365.178-.543-.155.094-.363.208-.28.386l-.406-.232c.671-.056.284-.37.145-.727-.201.263-.756-.165-.292-.238-.106-.134-.273-.148-.252.06-.304-.244-.81-.522-.561-.919-.239-.086-.535-.567-1.324-.7-.88-.149-2.255.059-2.42.172.169.305-.471.988.317.7-.996.784.074 2.219-.146 3.207l.19.082c-.125.514.345 1.373.64 1.912.136-.215.421-.218.422.069-.568-.247-.161.677.08.204.453.755-1.328-.077.56 1.313a1.944 1.944 0 01-.041.095 24.27 24.27 0 01-.237-.103c-.041.216-.24.27-.449.257l.351.885c.07-.135.196-.185.34-.135l.062-.537.19.082c-.086.312-.118.594-.159.89-.079-.118-.181-.289-.312-.191.233.263-.127.835.355.942.389.089.179.233-.042.292.621.909.612 2.247 1.366 3.099l-.197.197c.131.23.174.552.549.687l-.171.265c.357.527.43 1.989 1.537 1.792-.267.193-.557.179-.747-.098l-.008.279.184-.034c-.043.131.05.211.176.246l-.382.229c.192.298.758.424.467.878.154.033.218.159.203.313l.299-.039-.103.237.142.062c-.078.097-.158.194-.238.291l.163.014-.006-.115.054.136c.134-.099.296.08.427.184-.428.064-.521.891-.002.789l-.035.21.394.001-.013.164c-.135-.107-.261.064-.361.182.252.005.354.281.611.151-.176.221.148.388-.084.584.456-.116.179.302-.024.384.139.315.751-.133.538.514l.231-.012c.007.301-.333 1.928.228 1.169.225.233 1.136-.034.658.566.572.51 1.774-1.112 1.596-.043a.718.718 0 01.681-.27l-.047-.414c.748-.048 1.673-1.196 2.03-1.829l.123.109c-.001-.214.169-.317.374-.345l-.114-.388c.545-.166 1.311-.976 1.465-1.565l.258.055-.06-.252c.474-.429 1.877-1.732 1.841-2.305.529.162.813-1.193 1.326-1.372.469-.092-.187-.564.233-.604.996-.632 1.623-1.719 2.263-2.63.184-.237.751-.053.366-.518.418-.065.695-.695.845-1.044.375-.056.614-.991 1.009-1.03-.057-.337.54-.41.301-.828.155.012.288-.046.361-.183l.122.109c.03-.111-.014-.2-.129-.224.073-.148.197-.242.341-.135.04-.139.065-.296-.067-.367.261-.056.58-.33.361-.577.406.246.554-.257.362-.576.113-.036.141.077.149.177.249-.18.603-.646.642-.963.49.291.229-.141.443-.372-.112-.048-.27-.096-.245-.219.217-.006.268.228.496.158-.102-.15-.022-.296.117-.401l-.231.013c.046-.206.234-.215.367-.066.157-.241.293-.845.661-.617.088-.127.05-.251-.088-.32.401.028.434-.672.798-.67l-.135-.34c.25.017.521-.342.694-.433-.213-.015-.352-.138-.298-.354 1.133-.034 1.429-1.506 2.242-2.188l.101.156c.042-.094.083-.19.124-.285l-.184.034c-.097-.448.963-.598.594-.984l.279.008c-.237-.489 1.11-.574.342-.923.633.045 1.024-.691 1.227-1.274l.17.13c.257-.4.623-.596.676-1.174l.19.082c.254-.467.715-.957 1.036-1.356a45.172 45.172 0 01-.128-.225c.173-.129.368-.149.489.043.151-.325.314-.691.363-.971.368-.116.779-.34.723-.759.67-.163.95-1.517 1.656-1.877l-.095-.041-.061.142c-.171-.051-.33-.151-.251-.333l.285.123c.121-.484.675-.462.859-.813l-.143-.062c.196-.065.259-.251.253-.454.452-.208.951-.756 1.233-1.158l.143.061c-.155-.493.226-.361.397-.787l.169.13c-.338-.404.961-.524.369-.856l.259-.338c-.367-.178.094-.385.245-.176.025-.117.04-.293.172-.265-.344-.042-.341-.381-.584-.477.351-.151-.317-.675.267-.618-.117-.105-.386-.236-.298-.354l.312.191c.022-.295.319-.204.46-.28.015-.389-.58.146-.628-.244L40.347 3c-.046-.443.18-.909.297-1.337-.019.099-.054.235.06.251.114-.191.147-.404-.053-.53-.003.425-.548-.108-.755.181-.085-.073.094-.789-.181-.754l-.082.19.143.061c-.017.114-.152.08-.252.061l-.035.21c-.179-.147-.374-.347-.168-.523l-.237-.103c-.052.317-.534.141-.238-.103l-.19-.082-.062.143c-.469-.288-.723-.813-1.123-.204-.29.088-.523-.383-.771-.107-.096-.168-.341.013-.246.175-.573.029-1.314.414-.682 1.058-.274-.178-.692.059-.844.256l.238.102c-.258.423-.805-.287-.763.46-.169-.138-.321.202-.503.121l.123.109c.089-.214.287-.072.428-.209l-.062.537a19.219 19.219 0 00-.17-.13c-.7.342-.942 1.15-1.513 1.545l.4.116c-.028.151-.339.023-.509.006l-.008.278c-.214.435-1.841 1.226-1.438 1.634l-.034.21c-.673-.222-.276.198-.111.516-.343-.225-.727.361-1 .358.215.344-.33.482-.186.821-.292-.069-.249.347-.463.42l.237.103c-.537-.304-.591.623-1.129.526-.054.216.085.34.298.355-1.015.264-1.251 1.731-2.133 2.066l.421.069c-.542.372-.966.553-.901 1.302l-.163-.014.062-.142c-.483 0-.623.704-.883.999-.507.162-.36.351-.386.763-.26-.261-1.578.908-.941 1.003-.087.171-.315.23-.517.284l.149.177c-.348.227-.138.963-.791.786.081.205-.517.383-.361.577-.359.088-.569.316-.315.597-.27.106-.765.544-1.001.751l.095.041c-.11.153-.229.355-.021.442-.628-.064.604.891-.363.576.08-.103-.098-.249-.182-.361l.054.136c-.171.022-.17.297-.205.475a52.304 52.304 0 01-.312-.191c.084.316-.235.617-.41.95l.346-.019-.117.4-.175-.244c-.002.301-.506.29-.41.556-.589-.068-.875.591-1.314.954l.142.061c-.121.205-.4.406-.572.542l.203.313a10.86 10.86 0 01-.19-.082c-.557.711-1.43 1.157-1.644 2.109-.421-.059-.405.954-.676 1.173-.092-.095-.209-.137-.279-.007.207.098.417.243.305.469l-.238-.102.11-.122-.184.033-.013-.231c-.252.058-.509.417-.566.658-.457.146-.59 1.17-1.132 1.314-.172.513-1.229.841-1.024 1.587-.196-.011-.451-.02-.429.21a2.715 2.715 0 00-.095-.041c-.004.362-.221.615-.383 1.018.943.342.2.249-.029.72a.756.756 0 00-.243-.612c-.088.124-.186.409-.307.318-.219.564-.643 1.161-.748 1.012-.575.201.108-.953-.234-1.286-.313.482-.271-.072-.135-.34-.167-.043-.432-.172-.462.026l-.095-.041.286-.271-.326-.028c.039-.155.211-.291.361-.182-.104-.484-.53-.835-.811-1.253z"
+                        ></path>
+                      </g>
+                    </svg>
+                    Instant Billing Adjustments
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 1300 10"
+                      height="3"
+                      preserveAspectRatio="none"
+                      class="absolute top-0 left-0 w-full h-[3px] fill-sky-600/20"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M1264.29 4.85c-1.04-.029-17.58-1.783-26.79-1.35-.37.018-11.97-.122-12.33-.146-.7-.048-1.76-.174-2.06-.13-9.7 1.458-20.01-.138-29.8.212-9.71.348-19.24.035-28.79-.08-4.81-.06-9 .034-13.18.402-.34.029-.71.141-.86.128-10.56-.803-22.39.909-32.63-.561-1.93-.278-4.38-.178-6.66-.143-.51.346-1.18.73-3.66.558-2.1-.146-3.84-.456-5.88-.648-2.58-.244-6.03-.718-7.52.087-1.25.683 4.71.299 5.18 1.013-2.88-.171-6.11-.238-8.47-.535-3.21-.406-5.99-.487-9.57-.22-1.65.123-4.45.18-5.58.01-7.74-1.166-15.7-.01-23.5-.135-6.53-.107-3.97.723-3.05 1.428-1.41-.191-2.41-.286-3.09-.428-2.27-.47-2.53-1.764-8.48-.661-4.25-.645-9.56-.795-14.69-1-6.03-.243-6.8-.045-6 1.369.22.042.64.087.62.123-.07.104-.31.203-.49.305l-.72.085.49-.116c.13-.131.16-.263.1-.396-3.27-.349-6.17-.766-9.09-1.221-6.85-1.064-12.261-.719-15.806.836-9.731-1.469-9.731-1.469-17.434.517-4.97-.687-9.437-1.73-16.304-1.557-4.087.102-7.494-.071-11.182-.133-6.645-.112-13.223-.139-19.763-.478-2.518-.13-3.623.404-4.689.771l.589.111-.635-.101c-6.199.61-10.777-1.021-16.977-.409-9.018-1.128-14.884-.299-20.2 1.371-3.734-1.341-9.221-1.92-15.964-1.453-5.702.392-12.726-.804-17.467.596-1.504.445-4.296.175-5.807-.166-5.16-1.164-6.5-.121-8.665.471-4.512.112-3.643-1.363-8.56-1.019-4.676.326-6.18 1.162-7.612 1.96-.118.066-.177.136-.269.202-.66.47-1.092 1.103-4.898.68-2.452-.274-3.243-.777-.405-1.202 1.471-.221 3.387-.438 2.047-.819-1.151-.326-3.708-.349-5.154-.169-2.968.367-5.002.348-7.755-.1-3.532-.574-8.535-.494-12.884-.693-2.393-.11-2.838.338-3.237.68-1.092.181-1.085.363-.006.546-1.55.231-2.642.197-3.499-.156-2.367-.976-4.166-1.891-12.366-1.196-3.512.298-9.031-.184-13.622-.331-.654-.021-1.459-.236-1.772-.206-8.58.776-17.121-.089-25.655.001-1.805.019-2.544.247-2.355.571.242.135 1.969.194.628.409l-.902-.37c-1.923-.233-3.885-.487-6.331-.332-5.022.318-9.456.205-14.145-.307-3.374-.367-7.71-.677-10.823.233-.857.25-1.831.068-2.831-.045-4.781-.533-5.54.019-4.192.647 1.36.637-1.047 1.236 1.373 1.883-1.615-.068-2.505-.056-2.832-.129-3.073-.675-.163-2.203-7.795-2.147-5.134.037-9.652-.871-15.015-.208-1.648.204-3.544-.149-5.317-.253-9.227-.536-9.371-.525-15.943 1.022-6.605-1.033-14.06-1.331-22.379-.846-1.929.113-2.701-.123-3.59-.345.177-.046.523-.099.484-.138-.111-.121-.582-.116-1.19.006-3.904.436-7.063 1.227-12.622.348-3.263-.518-8.56-.144-12.942-.48-3.021-.231-6.48.233-6.284 1.053 1.739.459 2.688.93.732 1.541-.359-.567-.654-1.04-.948-1.513-3.649-.587-8.403-.846-12.517-1.28-6.212-.655-13.465-.489-19.455.426l-.706.082.595-.106c-1.511-.356-4.002-.659-5.834-.427-6.624.839-12.713.036-19.01-.076-1.766-.408-3.545-.351-5.336-.005-2.839.004-5.677.008-8.515.01-1.288-.144-1.589-.104-.778.14-.288.125-.785.361-.844.357-8.102-.489-16.185-.884-24.386-.063-3.597-.759-6.232-.452-8.626.245-.255.076-1.131.146-1.595.125-17.991-.824-26.885-.888-39.12-.27-1.073.053-2.871.193-3.159.127-2.969-.703-5.369-.506-9.659-.249-2.956.176-7.534-.287-11.17.314-1.177.193-2.949.018-4.244-.14-7.553-.923-15.237-.827-23.582-.311-3.06.189-7.37.21-10.862-.148.196-.043.582-.093.549-.129-.111-.119-.549-.11-1.118.023-4.977-.072-10.705.559-14.642-.528-.275-.076-2.021-.078-2.04-.065-1.982 1.359-8.548.075-12.772.757-3.663.592-10.457-.454-15.336-.212-6.971.346-14.557-.346-20.985.523-.471.063-1.589.044-2.165-.014-7.73-.799-16.951.133-24.726-.729-1.766-.196-4.565-.217-6.703-.142-12.288.427-24.779.084-37.184.408-6.749.177-14.303-.027-21.202-.173-6.18-.13-11.994.044-17.951.02-12.033-.049-24.066.104-36.112-.082-5.591-.085-11.438.04-16.892.167-17.604.411-35.268.551-52.918.592-14.466.035-28.434.592-42.612.868-15.041.292-28.552 1.382-42.965 1.94-2.217.085-4.545.185-6.475.389-4.878.514-4.728 1.471.288 1.929 2.001.184 4.421.371 6.54.335 15.636-.27 31.128.168 46.679.283 22.784.169 45.359-.419 68.052-.504 29.755-.114 59.34-.708 89.278-.504 18.9.129 38.152-.092 57.196-.019 15.126.057 30.35-.175 45.45.322 10.921.361 21.816-.337 32.861-.17 35.484.532 71.073.004 106.596.294 27.159.222 54.318-.062 81.477-.05 17.435.007 34.876.382 52.304.345 15.257-.031 30.566-.035 45.771.02 25.936.094 51.976-.333 77.847.336 3.773.098 7.638.101 11.464.102 32.031.016 64.121-.19 96.086.085 36.184.309 72.374.154 108.499.415 19.004.136 38.139.053 56.986.416 21.008.404 42.128.031 62.908.456 23.6.483 47.32.509 70.85.622 41.9.2 83.75.739 125.69.698 6.32-.005 12.82.272 19.34.271 6.14-.001 11.83-.066 17.48-.712 7.09-.809 22.11-1.993 14.86-1.993-13.62.001-20.21-2.073-33.78-2.445z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </li>
+
+                  <li
+                    class="flex relative items-center py-2.5 pl-4 xs:pl-12 sm:pl-14 pr-7"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 42 43"
+                      width="14"
+                      class="w-3 h-auto shrink-0 fill-emerald-500 mr-3 mb-0.5"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M8.581 29.619l.23-.013-.122-.109-.109.122-.251-.334c.173.021.303-.076.382-.23-.204-.011-.359-.15-.481-.32l.449-.257-.496-.158.123-.285c-.185.119-.352-.103-.271-.286l.238.103c.112-.165-.12-.56-.208-.823-.463.198-.243-.375-.033-.578-.1-.069-.208-.037-.299.04.075-.26-.185-.381-.42-.463l.218-.244c.088.063.038.147-.034.21l.38.164c-.151-.373-.3-.725-.718-.817.376-.335.029-.572.227-.917a62.19 62.19 0 01-.38-.164l.081.204-.258-.055-.055.258c-.325-.101-.129-.537.185-.427-.013-.357-.331-.327-.395-.002l-.169-.129c.207-.111.373-.268.436-.488-.114-.017-.079-.152-.06-.252l-.442-.022c.078-.311-.073-.525-.399-.51a.352.352 0 00-.059-.646l.039.299c-.252-.107-.272-.485-.583-.477.136-.166.307-.365.178-.543-.155.094-.363.208-.28.386l-.406-.232c.671-.056.284-.37.145-.727-.201.263-.756-.165-.292-.238-.106-.134-.273-.148-.252.06-.304-.244-.81-.522-.561-.919-.239-.086-.535-.567-1.324-.7-.88-.149-2.255.059-2.42.172.169.305-.471.988.317.7-.996.784.074 2.219-.146 3.207l.19.082c-.125.514.345 1.373.64 1.912.136-.215.421-.218.422.069-.568-.247-.161.677.08.204.453.755-1.328-.077.56 1.313a1.944 1.944 0 01-.041.095 24.27 24.27 0 01-.237-.103c-.041.216-.24.27-.449.257l.351.885c.07-.135.196-.185.34-.135l.062-.537.19.082c-.086.312-.118.594-.159.89-.079-.118-.181-.289-.312-.191.233.263-.127.835.355.942.389.089.179.233-.042.292.621.909.612 2.247 1.366 3.099l-.197.197c.131.23.174.552.549.687l-.171.265c.357.527.43 1.989 1.537 1.792-.267.193-.557.179-.747-.098l-.008.279.184-.034c-.043.131.05.211.176.246l-.382.229c.192.298.758.424.467.878.154.033.218.159.203.313l.299-.039-.103.237.142.062c-.078.097-.158.194-.238.291l.163.014-.006-.115.054.136c.134-.099.296.08.427.184-.428.064-.521.891-.002.789l-.035.21.394.001-.013.164c-.135-.107-.261.064-.361.182.252.005.354.281.611.151-.176.221.148.388-.084.584.456-.116.179.302-.024.384.139.315.751-.133.538.514l.231-.012c.007.301-.333 1.928.228 1.169.225.233 1.136-.034.658.566.572.51 1.774-1.112 1.596-.043a.718.718 0 01.681-.27l-.047-.414c.748-.048 1.673-1.196 2.03-1.829l.123.109c-.001-.214.169-.317.374-.345l-.114-.388c.545-.166 1.311-.976 1.465-1.565l.258.055-.06-.252c.474-.429 1.877-1.732 1.841-2.305.529.162.813-1.193 1.326-1.372.469-.092-.187-.564.233-.604.996-.632 1.623-1.719 2.263-2.63.184-.237.751-.053.366-.518.418-.065.695-.695.845-1.044.375-.056.614-.991 1.009-1.03-.057-.337.54-.41.301-.828.155.012.288-.046.361-.183l.122.109c.03-.111-.014-.2-.129-.224.073-.148.197-.242.341-.135.04-.139.065-.296-.067-.367.261-.056.58-.33.361-.577.406.246.554-.257.362-.576.113-.036.141.077.149.177.249-.18.603-.646.642-.963.49.291.229-.141.443-.372-.112-.048-.27-.096-.245-.219.217-.006.268.228.496.158-.102-.15-.022-.296.117-.401l-.231.013c.046-.206.234-.215.367-.066.157-.241.293-.845.661-.617.088-.127.05-.251-.088-.32.401.028.434-.672.798-.67l-.135-.34c.25.017.521-.342.694-.433-.213-.015-.352-.138-.298-.354 1.133-.034 1.429-1.506 2.242-2.188l.101.156c.042-.094.083-.19.124-.285l-.184.034c-.097-.448.963-.598.594-.984l.279.008c-.237-.489 1.11-.574.342-.923.633.045 1.024-.691 1.227-1.274l.17.13c.257-.4.623-.596.676-1.174l.19.082c.254-.467.715-.957 1.036-1.356a45.172 45.172 0 01-.128-.225c.173-.129.368-.149.489.043.151-.325.314-.691.363-.971.368-.116.779-.34.723-.759.67-.163.95-1.517 1.656-1.877l-.095-.041-.061.142c-.171-.051-.33-.151-.251-.333l.285.123c.121-.484.675-.462.859-.813l-.143-.062c.196-.065.259-.251.253-.454.452-.208.951-.756 1.233-1.158l.143.061c-.155-.493.226-.361.397-.787l.169.13c-.338-.404.961-.524.369-.856l.259-.338c-.367-.178.094-.385.245-.176.025-.117.04-.293.172-.265-.344-.042-.341-.381-.584-.477.351-.151-.317-.675.267-.618-.117-.105-.386-.236-.298-.354l.312.191c.022-.295.319-.204.46-.28.015-.389-.58.146-.628-.244L40.347 3c-.046-.443.18-.909.297-1.337-.019.099-.054.235.06.251.114-.191.147-.404-.053-.53-.003.425-.548-.108-.755.181-.085-.073.094-.789-.181-.754l-.082.19.143.061c-.017.114-.152.08-.252.061l-.035.21c-.179-.147-.374-.347-.168-.523l-.237-.103c-.052.317-.534.141-.238-.103l-.19-.082-.062.143c-.469-.288-.723-.813-1.123-.204-.29.088-.523-.383-.771-.107-.096-.168-.341.013-.246.175-.573.029-1.314.414-.682 1.058-.274-.178-.692.059-.844.256l.238.102c-.258.423-.805-.287-.763.46-.169-.138-.321.202-.503.121l.123.109c.089-.214.287-.072.428-.209l-.062.537a19.219 19.219 0 00-.17-.13c-.7.342-.942 1.15-1.513 1.545l.4.116c-.028.151-.339.023-.509.006l-.008.278c-.214.435-1.841 1.226-1.438 1.634l-.034.21c-.673-.222-.276.198-.111.516-.343-.225-.727.361-1 .358.215.344-.33.482-.186.821-.292-.069-.249.347-.463.42l.237.103c-.537-.304-.591.623-1.129.526-.054.216.085.34.298.355-1.015.264-1.251 1.731-2.133 2.066l.421.069c-.542.372-.966.553-.901 1.302l-.163-.014.062-.142c-.483 0-.623.704-.883.999-.507.162-.36.351-.386.763-.26-.261-1.578.908-.941 1.003-.087.171-.315.23-.517.284l.149.177c-.348.227-.138.963-.791.786.081.205-.517.383-.361.577-.359.088-.569.316-.315.597-.27.106-.765.544-1.001.751l.095.041c-.11.153-.229.355-.021.442-.628-.064.604.891-.363.576.08-.103-.098-.249-.182-.361l.054.136c-.171.022-.17.297-.205.475a52.304 52.304 0 01-.312-.191c.084.316-.235.617-.41.95l.346-.019-.117.4-.175-.244c-.002.301-.506.29-.41.556-.589-.068-.875.591-1.314.954l.142.061c-.121.205-.4.406-.572.542l.203.313a10.86 10.86 0 01-.19-.082c-.557.711-1.43 1.157-1.644 2.109-.421-.059-.405.954-.676 1.173-.092-.095-.209-.137-.279-.007.207.098.417.243.305.469l-.238-.102.11-.122-.184.033-.013-.231c-.252.058-.509.417-.566.658-.457.146-.59 1.17-1.132 1.314-.172.513-1.229.841-1.024 1.587-.196-.011-.451-.02-.429.21a2.715 2.715 0 00-.095-.041c-.004.362-.221.615-.383 1.018.943.342.2.249-.029.72a.756.756 0 00-.243-.612c-.088.124-.186.409-.307.318-.219.564-.643 1.161-.748 1.012-.575.201.108-.953-.234-1.286-.313.482-.271-.072-.135-.34-.167-.043-.432-.172-.462.026l-.095-.041.286-.271-.326-.028c.039-.155.211-.291.361-.182-.104-.484-.53-.835-.811-1.253z"
+                        ></path>
+                      </g>
+                    </svg>
+                    Waiver for Unintentional Deployments
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 1300 10"
+                      height="3"
+                      preserveAspectRatio="none"
+                      class="absolute top-0 left-0 w-full h-[3px] fill-sky-600/20"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M1264.29 4.85c-1.04-.029-17.58-1.783-26.79-1.35-.37.018-11.97-.122-12.33-.146-.7-.048-1.76-.174-2.06-.13-9.7 1.458-20.01-.138-29.8.212-9.71.348-19.24.035-28.79-.08-4.81-.06-9 .034-13.18.402-.34.029-.71.141-.86.128-10.56-.803-22.39.909-32.63-.561-1.93-.278-4.38-.178-6.66-.143-.51.346-1.18.73-3.66.558-2.1-.146-3.84-.456-5.88-.648-2.58-.244-6.03-.718-7.52.087-1.25.683 4.71.299 5.18 1.013-2.88-.171-6.11-.238-8.47-.535-3.21-.406-5.99-.487-9.57-.22-1.65.123-4.45.18-5.58.01-7.74-1.166-15.7-.01-23.5-.135-6.53-.107-3.97.723-3.05 1.428-1.41-.191-2.41-.286-3.09-.428-2.27-.47-2.53-1.764-8.48-.661-4.25-.645-9.56-.795-14.69-1-6.03-.243-6.8-.045-6 1.369.22.042.64.087.62.123-.07.104-.31.203-.49.305l-.72.085.49-.116c.13-.131.16-.263.1-.396-3.27-.349-6.17-.766-9.09-1.221-6.85-1.064-12.261-.719-15.806.836-9.731-1.469-9.731-1.469-17.434.517-4.97-.687-9.437-1.73-16.304-1.557-4.087.102-7.494-.071-11.182-.133-6.645-.112-13.223-.139-19.763-.478-2.518-.13-3.623.404-4.689.771l.589.111-.635-.101c-6.199.61-10.777-1.021-16.977-.409-9.018-1.128-14.884-.299-20.2 1.371-3.734-1.341-9.221-1.92-15.964-1.453-5.702.392-12.726-.804-17.467.596-1.504.445-4.296.175-5.807-.166-5.16-1.164-6.5-.121-8.665.471-4.512.112-3.643-1.363-8.56-1.019-4.676.326-6.18 1.162-7.612 1.96-.118.066-.177.136-.269.202-.66.47-1.092 1.103-4.898.68-2.452-.274-3.243-.777-.405-1.202 1.471-.221 3.387-.438 2.047-.819-1.151-.326-3.708-.349-5.154-.169-2.968.367-5.002.348-7.755-.1-3.532-.574-8.535-.494-12.884-.693-2.393-.11-2.838.338-3.237.68-1.092.181-1.085.363-.006.546-1.55.231-2.642.197-3.499-.156-2.367-.976-4.166-1.891-12.366-1.196-3.512.298-9.031-.184-13.622-.331-.654-.021-1.459-.236-1.772-.206-8.58.776-17.121-.089-25.655.001-1.805.019-2.544.247-2.355.571.242.135 1.969.194.628.409l-.902-.37c-1.923-.233-3.885-.487-6.331-.332-5.022.318-9.456.205-14.145-.307-3.374-.367-7.71-.677-10.823.233-.857.25-1.831.068-2.831-.045-4.781-.533-5.54.019-4.192.647 1.36.637-1.047 1.236 1.373 1.883-1.615-.068-2.505-.056-2.832-.129-3.073-.675-.163-2.203-7.795-2.147-5.134.037-9.652-.871-15.015-.208-1.648.204-3.544-.149-5.317-.253-9.227-.536-9.371-.525-15.943 1.022-6.605-1.033-14.06-1.331-22.379-.846-1.929.113-2.701-.123-3.59-.345.177-.046.523-.099.484-.138-.111-.121-.582-.116-1.19.006-3.904.436-7.063 1.227-12.622.348-3.263-.518-8.56-.144-12.942-.48-3.021-.231-6.48.233-6.284 1.053 1.739.459 2.688.93.732 1.541-.359-.567-.654-1.04-.948-1.513-3.649-.587-8.403-.846-12.517-1.28-6.212-.655-13.465-.489-19.455.426l-.706.082.595-.106c-1.511-.356-4.002-.659-5.834-.427-6.624.839-12.713.036-19.01-.076-1.766-.408-3.545-.351-5.336-.005-2.839.004-5.677.008-8.515.01-1.288-.144-1.589-.104-.778.14-.288.125-.785.361-.844.357-8.102-.489-16.185-.884-24.386-.063-3.597-.759-6.232-.452-8.626.245-.255.076-1.131.146-1.595.125-17.991-.824-26.885-.888-39.12-.27-1.073.053-2.871.193-3.159.127-2.969-.703-5.369-.506-9.659-.249-2.956.176-7.534-.287-11.17.314-1.177.193-2.949.018-4.244-.14-7.553-.923-15.237-.827-23.582-.311-3.06.189-7.37.21-10.862-.148.196-.043.582-.093.549-.129-.111-.119-.549-.11-1.118.023-4.977-.072-10.705.559-14.642-.528-.275-.076-2.021-.078-2.04-.065-1.982 1.359-8.548.075-12.772.757-3.663.592-10.457-.454-15.336-.212-6.971.346-14.557-.346-20.985.523-.471.063-1.589.044-2.165-.014-7.73-.799-16.951.133-24.726-.729-1.766-.196-4.565-.217-6.703-.142-12.288.427-24.779.084-37.184.408-6.749.177-14.303-.027-21.202-.173-6.18-.13-11.994.044-17.951.02-12.033-.049-24.066.104-36.112-.082-5.591-.085-11.438.04-16.892.167-17.604.411-35.268.551-52.918.592-14.466.035-28.434.592-42.612.868-15.041.292-28.552 1.382-42.965 1.94-2.217.085-4.545.185-6.475.389-4.878.514-4.728 1.471.288 1.929 2.001.184 4.421.371 6.54.335 15.636-.27 31.128.168 46.679.283 22.784.169 45.359-.419 68.052-.504 29.755-.114 59.34-.708 89.278-.504 18.9.129 38.152-.092 57.196-.019 15.126.057 30.35-.175 45.45.322 10.921.361 21.816-.337 32.861-.17 35.484.532 71.073.004 106.596.294 27.159.222 54.318-.062 81.477-.05 17.435.007 34.876.382 52.304.345 15.257-.031 30.566-.035 45.771.02 25.936.094 51.976-.333 77.847.336 3.773.098 7.638.101 11.464.102 32.031.016 64.121-.19 96.086.085 36.184.309 72.374.154 108.499.415 19.004.136 38.139.053 56.986.416 21.008.404 42.128.031 62.908.456 23.6.483 47.32.509 70.85.622 41.9.2 83.75.739 125.69.698 6.32-.005 12.82.272 19.34.271 6.14-.001 11.83-.066 17.48-.712 7.09-.809 22.11-1.993 14.86-1.993-13.62.001-20.21-2.073-33.78-2.445z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </li>
+
+                  <li
+                    class="flex relative items-center py-2.5 pl-4 xs:pl-12 sm:pl-14 pr-7"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 42 43"
+                      width="14"
+                      class="w-3 h-auto shrink-0 fill-emerald-500 mr-3 mb-0.5"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M8.581 29.619l.23-.013-.122-.109-.109.122-.251-.334c.173.021.303-.076.382-.23-.204-.011-.359-.15-.481-.32l.449-.257-.496-.158.123-.285c-.185.119-.352-.103-.271-.286l.238.103c.112-.165-.12-.56-.208-.823-.463.198-.243-.375-.033-.578-.1-.069-.208-.037-.299.04.075-.26-.185-.381-.42-.463l.218-.244c.088.063.038.147-.034.21l.38.164c-.151-.373-.3-.725-.718-.817.376-.335.029-.572.227-.917a62.19 62.19 0 01-.38-.164l.081.204-.258-.055-.055.258c-.325-.101-.129-.537.185-.427-.013-.357-.331-.327-.395-.002l-.169-.129c.207-.111.373-.268.436-.488-.114-.017-.079-.152-.06-.252l-.442-.022c.078-.311-.073-.525-.399-.51a.352.352 0 00-.059-.646l.039.299c-.252-.107-.272-.485-.583-.477.136-.166.307-.365.178-.543-.155.094-.363.208-.28.386l-.406-.232c.671-.056.284-.37.145-.727-.201.263-.756-.165-.292-.238-.106-.134-.273-.148-.252.06-.304-.244-.81-.522-.561-.919-.239-.086-.535-.567-1.324-.7-.88-.149-2.255.059-2.42.172.169.305-.471.988.317.7-.996.784.074 2.219-.146 3.207l.19.082c-.125.514.345 1.373.64 1.912.136-.215.421-.218.422.069-.568-.247-.161.677.08.204.453.755-1.328-.077.56 1.313a1.944 1.944 0 01-.041.095 24.27 24.27 0 01-.237-.103c-.041.216-.24.27-.449.257l.351.885c.07-.135.196-.185.34-.135l.062-.537.19.082c-.086.312-.118.594-.159.89-.079-.118-.181-.289-.312-.191.233.263-.127.835.355.942.389.089.179.233-.042.292.621.909.612 2.247 1.366 3.099l-.197.197c.131.23.174.552.549.687l-.171.265c.357.527.43 1.989 1.537 1.792-.267.193-.557.179-.747-.098l-.008.279.184-.034c-.043.131.05.211.176.246l-.382.229c.192.298.758.424.467.878.154.033.218.159.203.313l.299-.039-.103.237.142.062c-.078.097-.158.194-.238.291l.163.014-.006-.115.054.136c.134-.099.296.08.427.184-.428.064-.521.891-.002.789l-.035.21.394.001-.013.164c-.135-.107-.261.064-.361.182.252.005.354.281.611.151-.176.221.148.388-.084.584.456-.116.179.302-.024.384.139.315.751-.133.538.514l.231-.012c.007.301-.333 1.928.228 1.169.225.233 1.136-.034.658.566.572.51 1.774-1.112 1.596-.043a.718.718 0 01.681-.27l-.047-.414c.748-.048 1.673-1.196 2.03-1.829l.123.109c-.001-.214.169-.317.374-.345l-.114-.388c.545-.166 1.311-.976 1.465-1.565l.258.055-.06-.252c.474-.429 1.877-1.732 1.841-2.305.529.162.813-1.193 1.326-1.372.469-.092-.187-.564.233-.604.996-.632 1.623-1.719 2.263-2.63.184-.237.751-.053.366-.518.418-.065.695-.695.845-1.044.375-.056.614-.991 1.009-1.03-.057-.337.54-.41.301-.828.155.012.288-.046.361-.183l.122.109c.03-.111-.014-.2-.129-.224.073-.148.197-.242.341-.135.04-.139.065-.296-.067-.367.261-.056.58-.33.361-.577.406.246.554-.257.362-.576.113-.036.141.077.149.177.249-.18.603-.646.642-.963.49.291.229-.141.443-.372-.112-.048-.27-.096-.245-.219.217-.006.268.228.496.158-.102-.15-.022-.296.117-.401l-.231.013c.046-.206.234-.215.367-.066.157-.241.293-.845.661-.617.088-.127.05-.251-.088-.32.401.028.434-.672.798-.67l-.135-.34c.25.017.521-.342.694-.433-.213-.015-.352-.138-.298-.354 1.133-.034 1.429-1.506 2.242-2.188l.101.156c.042-.094.083-.19.124-.285l-.184.034c-.097-.448.963-.598.594-.984l.279.008c-.237-.489 1.11-.574.342-.923.633.045 1.024-.691 1.227-1.274l.17.13c.257-.4.623-.596.676-1.174l.19.082c.254-.467.715-.957 1.036-1.356a45.172 45.172 0 01-.128-.225c.173-.129.368-.149.489.043.151-.325.314-.691.363-.971.368-.116.779-.34.723-.759.67-.163.95-1.517 1.656-1.877l-.095-.041-.061.142c-.171-.051-.33-.151-.251-.333l.285.123c.121-.484.675-.462.859-.813l-.143-.062c.196-.065.259-.251.253-.454.452-.208.951-.756 1.233-1.158l.143.061c-.155-.493.226-.361.397-.787l.169.13c-.338-.404.961-.524.369-.856l.259-.338c-.367-.178.094-.385.245-.176.025-.117.04-.293.172-.265-.344-.042-.341-.381-.584-.477.351-.151-.317-.675.267-.618-.117-.105-.386-.236-.298-.354l.312.191c.022-.295.319-.204.46-.28.015-.389-.58.146-.628-.244L40.347 3c-.046-.443.18-.909.297-1.337-.019.099-.054.235.06.251.114-.191.147-.404-.053-.53-.003.425-.548-.108-.755.181-.085-.073.094-.789-.181-.754l-.082.19.143.061c-.017.114-.152.08-.252.061l-.035.21c-.179-.147-.374-.347-.168-.523l-.237-.103c-.052.317-.534.141-.238-.103l-.19-.082-.062.143c-.469-.288-.723-.813-1.123-.204-.29.088-.523-.383-.771-.107-.096-.168-.341.013-.246.175-.573.029-1.314.414-.682 1.058-.274-.178-.692.059-.844.256l.238.102c-.258.423-.805-.287-.763.46-.169-.138-.321.202-.503.121l.123.109c.089-.214.287-.072.428-.209l-.062.537a19.219 19.219 0 00-.17-.13c-.7.342-.942 1.15-1.513 1.545l.4.116c-.028.151-.339.023-.509.006l-.008.278c-.214.435-1.841 1.226-1.438 1.634l-.034.21c-.673-.222-.276.198-.111.516-.343-.225-.727.361-1 .358.215.344-.33.482-.186.821-.292-.069-.249.347-.463.42l.237.103c-.537-.304-.591.623-1.129.526-.054.216.085.34.298.355-1.015.264-1.251 1.731-2.133 2.066l.421.069c-.542.372-.966.553-.901 1.302l-.163-.014.062-.142c-.483 0-.623.704-.883.999-.507.162-.36.351-.386.763-.26-.261-1.578.908-.941 1.003-.087.171-.315.23-.517.284l.149.177c-.348.227-.138.963-.791.786.081.205-.517.383-.361.577-.359.088-.569.316-.315.597-.27.106-.765.544-1.001.751l.095.041c-.11.153-.229.355-.021.442-.628-.064.604.891-.363.576.08-.103-.098-.249-.182-.361l.054.136c-.171.022-.17.297-.205.475a52.304 52.304 0 01-.312-.191c.084.316-.235.617-.41.95l.346-.019-.117.4-.175-.244c-.002.301-.506.29-.41.556-.589-.068-.875.591-1.314.954l.142.061c-.121.205-.4.406-.572.542l.203.313a10.86 10.86 0 01-.19-.082c-.557.711-1.43 1.157-1.644 2.109-.421-.059-.405.954-.676 1.173-.092-.095-.209-.137-.279-.007.207.098.417.243.305.469l-.238-.102.11-.122-.184.033-.013-.231c-.252.058-.509.417-.566.658-.457.146-.59 1.17-1.132 1.314-.172.513-1.229.841-1.024 1.587-.196-.011-.451-.02-.429.21a2.715 2.715 0 00-.095-.041c-.004.362-.221.615-.383 1.018.943.342.2.249-.029.72a.756.756 0 00-.243-.612c-.088.124-.186.409-.307.318-.219.564-.643 1.161-.748 1.012-.575.201.108-.953-.234-1.286-.313.482-.271-.072-.135-.34-.167-.043-.432-.172-.462.026l-.095-.041.286-.271-.326-.028c.039-.155.211-.291.361-.182-.104-.484-.53-.835-.811-1.253z"
+                        ></path>
+                      </g>
+                    </svg>
+                    Proactive Issue Handling
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 1300 10"
+                      height="3"
+                      preserveAspectRatio="none"
+                      class="absolute top-0 left-0 w-full h-[3px] fill-sky-600/20"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M1264.29 4.85c-1.04-.029-17.58-1.783-26.79-1.35-.37.018-11.97-.122-12.33-.146-.7-.048-1.76-.174-2.06-.13-9.7 1.458-20.01-.138-29.8.212-9.71.348-19.24.035-28.79-.08-4.81-.06-9 .034-13.18.402-.34.029-.71.141-.86.128-10.56-.803-22.39.909-32.63-.561-1.93-.278-4.38-.178-6.66-.143-.51.346-1.18.73-3.66.558-2.1-.146-3.84-.456-5.88-.648-2.58-.244-6.03-.718-7.52.087-1.25.683 4.71.299 5.18 1.013-2.88-.171-6.11-.238-8.47-.535-3.21-.406-5.99-.487-9.57-.22-1.65.123-4.45.18-5.58.01-7.74-1.166-15.7-.01-23.5-.135-6.53-.107-3.97.723-3.05 1.428-1.41-.191-2.41-.286-3.09-.428-2.27-.47-2.53-1.764-8.48-.661-4.25-.645-9.56-.795-14.69-1-6.03-.243-6.8-.045-6 1.369.22.042.64.087.62.123-.07.104-.31.203-.49.305l-.72.085.49-.116c.13-.131.16-.263.1-.396-3.27-.349-6.17-.766-9.09-1.221-6.85-1.064-12.261-.719-15.806.836-9.731-1.469-9.731-1.469-17.434.517-4.97-.687-9.437-1.73-16.304-1.557-4.087.102-7.494-.071-11.182-.133-6.645-.112-13.223-.139-19.763-.478-2.518-.13-3.623.404-4.689.771l.589.111-.635-.101c-6.199.61-10.777-1.021-16.977-.409-9.018-1.128-14.884-.299-20.2 1.371-3.734-1.341-9.221-1.92-15.964-1.453-5.702.392-12.726-.804-17.467.596-1.504.445-4.296.175-5.807-.166-5.16-1.164-6.5-.121-8.665.471-4.512.112-3.643-1.363-8.56-1.019-4.676.326-6.18 1.162-7.612 1.96-.118.066-.177.136-.269.202-.66.47-1.092 1.103-4.898.68-2.452-.274-3.243-.777-.405-1.202 1.471-.221 3.387-.438 2.047-.819-1.151-.326-3.708-.349-5.154-.169-2.968.367-5.002.348-7.755-.1-3.532-.574-8.535-.494-12.884-.693-2.393-.11-2.838.338-3.237.68-1.092.181-1.085.363-.006.546-1.55.231-2.642.197-3.499-.156-2.367-.976-4.166-1.891-12.366-1.196-3.512.298-9.031-.184-13.622-.331-.654-.021-1.459-.236-1.772-.206-8.58.776-17.121-.089-25.655.001-1.805.019-2.544.247-2.355.571.242.135 1.969.194.628.409l-.902-.37c-1.923-.233-3.885-.487-6.331-.332-5.022.318-9.456.205-14.145-.307-3.374-.367-7.71-.677-10.823.233-.857.25-1.831.068-2.831-.045-4.781-.533-5.54.019-4.192.647 1.36.637-1.047 1.236 1.373 1.883-1.615-.068-2.505-.056-2.832-.129-3.073-.675-.163-2.203-7.795-2.147-5.134.037-9.652-.871-15.015-.208-1.648.204-3.544-.149-5.317-.253-9.227-.536-9.371-.525-15.943 1.022-6.605-1.033-14.06-1.331-22.379-.846-1.929.113-2.701-.123-3.59-.345.177-.046.523-.099.484-.138-.111-.121-.582-.116-1.19.006-3.904.436-7.063 1.227-12.622.348-3.263-.518-8.56-.144-12.942-.48-3.021-.231-6.48.233-6.284 1.053 1.739.459 2.688.93.732 1.541-.359-.567-.654-1.04-.948-1.513-3.649-.587-8.403-.846-12.517-1.28-6.212-.655-13.465-.489-19.455.426l-.706.082.595-.106c-1.511-.356-4.002-.659-5.834-.427-6.624.839-12.713.036-19.01-.076-1.766-.408-3.545-.351-5.336-.005-2.839.004-5.677.008-8.515.01-1.288-.144-1.589-.104-.778.14-.288.125-.785.361-.844.357-8.102-.489-16.185-.884-24.386-.063-3.597-.759-6.232-.452-8.626.245-.255.076-1.131.146-1.595.125-17.991-.824-26.885-.888-39.12-.27-1.073.053-2.871.193-3.159.127-2.969-.703-5.369-.506-9.659-.249-2.956.176-7.534-.287-11.17.314-1.177.193-2.949.018-4.244-.14-7.553-.923-15.237-.827-23.582-.311-3.06.189-7.37.21-10.862-.148.196-.043.582-.093.549-.129-.111-.119-.549-.11-1.118.023-4.977-.072-10.705.559-14.642-.528-.275-.076-2.021-.078-2.04-.065-1.982 1.359-8.548.075-12.772.757-3.663.592-10.457-.454-15.336-.212-6.971.346-14.557-.346-20.985.523-.471.063-1.589.044-2.165-.014-7.73-.799-16.951.133-24.726-.729-1.766-.196-4.565-.217-6.703-.142-12.288.427-24.779.084-37.184.408-6.749.177-14.303-.027-21.202-.173-6.18-.13-11.994.044-17.951.02-12.033-.049-24.066.104-36.112-.082-5.591-.085-11.438.04-16.892.167-17.604.411-35.268.551-52.918.592-14.466.035-28.434.592-42.612.868-15.041.292-28.552 1.382-42.965 1.94-2.217.085-4.545.185-6.475.389-4.878.514-4.728 1.471.288 1.929 2.001.184 4.421.371 6.54.335 15.636-.27 31.128.168 46.679.283 22.784.169 45.359-.419 68.052-.504 29.755-.114 59.34-.708 89.278-.504 18.9.129 38.152-.092 57.196-.019 15.126.057 30.35-.175 45.45.322 10.921.361 21.816-.337 32.861-.17 35.484.532 71.073.004 106.596.294 27.159.222 54.318-.062 81.477-.05 17.435.007 34.876.382 52.304.345 15.257-.031 30.566-.035 45.771.02 25.936.094 51.976-.333 77.847.336 3.773.098 7.638.101 11.464.102 32.031.016 64.121-.19 96.086.085 36.184.309 72.374.154 108.499.415 19.004.136 38.139.053 56.986.416 21.008.404 42.128.031 62.908.456 23.6.483 47.32.509 70.85.622 41.9.2 83.75.739 125.69.698 6.32-.005 12.82.272 19.34.271 6.14-.001 11.83-.066 17.48-.712 7.09-.809 22.11-1.993 14.86-1.993-13.62.001-20.21-2.073-33.78-2.445z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </li>
+
+                  <li
+                    class="flex relative items-center py-2.5 pl-4 xs:pl-12 sm:pl-14 pr-7"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 42 43"
+                      width="14"
+                      class="w-3 h-auto shrink-0 fill-emerald-500 mr-3 mb-0.5"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M8.581 29.619l.23-.013-.122-.109-.109.122-.251-.334c.173.021.303-.076.382-.23-.204-.011-.359-.15-.481-.32l.449-.257-.496-.158.123-.285c-.185.119-.352-.103-.271-.286l.238.103c.112-.165-.12-.56-.208-.823-.463.198-.243-.375-.033-.578-.1-.069-.208-.037-.299.04.075-.26-.185-.381-.42-.463l.218-.244c.088.063.038.147-.034.21l.38.164c-.151-.373-.3-.725-.718-.817.376-.335.029-.572.227-.917a62.19 62.19 0 01-.38-.164l.081.204-.258-.055-.055.258c-.325-.101-.129-.537.185-.427-.013-.357-.331-.327-.395-.002l-.169-.129c.207-.111.373-.268.436-.488-.114-.017-.079-.152-.06-.252l-.442-.022c.078-.311-.073-.525-.399-.51a.352.352 0 00-.059-.646l.039.299c-.252-.107-.272-.485-.583-.477.136-.166.307-.365.178-.543-.155.094-.363.208-.28.386l-.406-.232c.671-.056.284-.37.145-.727-.201.263-.756-.165-.292-.238-.106-.134-.273-.148-.252.06-.304-.244-.81-.522-.561-.919-.239-.086-.535-.567-1.324-.7-.88-.149-2.255.059-2.42.172.169.305-.471.988.317.7-.996.784.074 2.219-.146 3.207l.19.082c-.125.514.345 1.373.64 1.912.136-.215.421-.218.422.069-.568-.247-.161.677.08.204.453.755-1.328-.077.56 1.313a1.944 1.944 0 01-.041.095 24.27 24.27 0 01-.237-.103c-.041.216-.24.27-.449.257l.351.885c.07-.135.196-.185.34-.135l.062-.537.19.082c-.086.312-.118.594-.159.89-.079-.118-.181-.289-.312-.191.233.263-.127.835.355.942.389.089.179.233-.042.292.621.909.612 2.247 1.366 3.099l-.197.197c.131.23.174.552.549.687l-.171.265c.357.527.43 1.989 1.537 1.792-.267.193-.557.179-.747-.098l-.008.279.184-.034c-.043.131.05.211.176.246l-.382.229c.192.298.758.424.467.878.154.033.218.159.203.313l.299-.039-.103.237.142.062c-.078.097-.158.194-.238.291l.163.014-.006-.115.054.136c.134-.099.296.08.427.184-.428.064-.521.891-.002.789l-.035.21.394.001-.013.164c-.135-.107-.261.064-.361.182.252.005.354.281.611.151-.176.221.148.388-.084.584.456-.116.179.302-.024.384.139.315.751-.133.538.514l.231-.012c.007.301-.333 1.928.228 1.169.225.233 1.136-.034.658.566.572.51 1.774-1.112 1.596-.043a.718.718 0 01.681-.27l-.047-.414c.748-.048 1.673-1.196 2.03-1.829l.123.109c-.001-.214.169-.317.374-.345l-.114-.388c.545-.166 1.311-.976 1.465-1.565l.258.055-.06-.252c.474-.429 1.877-1.732 1.841-2.305.529.162.813-1.193 1.326-1.372.469-.092-.187-.564.233-.604.996-.632 1.623-1.719 2.263-2.63.184-.237.751-.053.366-.518.418-.065.695-.695.845-1.044.375-.056.614-.991 1.009-1.03-.057-.337.54-.41.301-.828.155.012.288-.046.361-.183l.122.109c.03-.111-.014-.2-.129-.224.073-.148.197-.242.341-.135.04-.139.065-.296-.067-.367.261-.056.58-.33.361-.577.406.246.554-.257.362-.576.113-.036.141.077.149.177.249-.18.603-.646.642-.963.49.291.229-.141.443-.372-.112-.048-.27-.096-.245-.219.217-.006.268.228.496.158-.102-.15-.022-.296.117-.401l-.231.013c.046-.206.234-.215.367-.066.157-.241.293-.845.661-.617.088-.127.05-.251-.088-.32.401.028.434-.672.798-.67l-.135-.34c.25.017.521-.342.694-.433-.213-.015-.352-.138-.298-.354 1.133-.034 1.429-1.506 2.242-2.188l.101.156c.042-.094.083-.19.124-.285l-.184.034c-.097-.448.963-.598.594-.984l.279.008c-.237-.489 1.11-.574.342-.923.633.045 1.024-.691 1.227-1.274l.17.13c.257-.4.623-.596.676-1.174l.19.082c.254-.467.715-.957 1.036-1.356a45.172 45.172 0 01-.128-.225c.173-.129.368-.149.489.043.151-.325.314-.691.363-.971.368-.116.779-.34.723-.759.67-.163.95-1.517 1.656-1.877l-.095-.041-.061.142c-.171-.051-.33-.151-.251-.333l.285.123c.121-.484.675-.462.859-.813l-.143-.062c.196-.065.259-.251.253-.454.452-.208.951-.756 1.233-1.158l.143.061c-.155-.493.226-.361.397-.787l.169.13c-.338-.404.961-.524.369-.856l.259-.338c-.367-.178.094-.385.245-.176.025-.117.04-.293.172-.265-.344-.042-.341-.381-.584-.477.351-.151-.317-.675.267-.618-.117-.105-.386-.236-.298-.354l.312.191c.022-.295.319-.204.46-.28.015-.389-.58.146-.628-.244L40.347 3c-.046-.443.18-.909.297-1.337-.019.099-.054.235.06.251.114-.191.147-.404-.053-.53-.003.425-.548-.108-.755.181-.085-.073.094-.789-.181-.754l-.082.19.143.061c-.017.114-.152.08-.252.061l-.035.21c-.179-.147-.374-.347-.168-.523l-.237-.103c-.052.317-.534.141-.238-.103l-.19-.082-.062.143c-.469-.288-.723-.813-1.123-.204-.29.088-.523-.383-.771-.107-.096-.168-.341.013-.246.175-.573.029-1.314.414-.682 1.058-.274-.178-.692.059-.844.256l.238.102c-.258.423-.805-.287-.763.46-.169-.138-.321.202-.503.121l.123.109c.089-.214.287-.072.428-.209l-.062.537a19.219 19.219 0 00-.17-.13c-.7.342-.942 1.15-1.513 1.545l.4.116c-.028.151-.339.023-.509.006l-.008.278c-.214.435-1.841 1.226-1.438 1.634l-.034.21c-.673-.222-.276.198-.111.516-.343-.225-.727.361-1 .358.215.344-.33.482-.186.821-.292-.069-.249.347-.463.42l.237.103c-.537-.304-.591.623-1.129.526-.054.216.085.34.298.355-1.015.264-1.251 1.731-2.133 2.066l.421.069c-.542.372-.966.553-.901 1.302l-.163-.014.062-.142c-.483 0-.623.704-.883.999-.507.162-.36.351-.386.763-.26-.261-1.578.908-.941 1.003-.087.171-.315.23-.517.284l.149.177c-.348.227-.138.963-.791.786.081.205-.517.383-.361.577-.359.088-.569.316-.315.597-.27.106-.765.544-1.001.751l.095.041c-.11.153-.229.355-.021.442-.628-.064.604.891-.363.576.08-.103-.098-.249-.182-.361l.054.136c-.171.022-.17.297-.205.475a52.304 52.304 0 01-.312-.191c.084.316-.235.617-.41.95l.346-.019-.117.4-.175-.244c-.002.301-.506.29-.41.556-.589-.068-.875.591-1.314.954l.142.061c-.121.205-.4.406-.572.542l.203.313a10.86 10.86 0 01-.19-.082c-.557.711-1.43 1.157-1.644 2.109-.421-.059-.405.954-.676 1.173-.092-.095-.209-.137-.279-.007.207.098.417.243.305.469l-.238-.102.11-.122-.184.033-.013-.231c-.252.058-.509.417-.566.658-.457.146-.59 1.17-1.132 1.314-.172.513-1.229.841-1.024 1.587-.196-.011-.451-.02-.429.21a2.715 2.715 0 00-.095-.041c-.004.362-.221.615-.383 1.018.943.342.2.249-.029.72a.756.756 0 00-.243-.612c-.088.124-.186.409-.307.318-.219.564-.643 1.161-.748 1.012-.575.201.108-.953-.234-1.286-.313.482-.271-.072-.135-.34-.167-.043-.432-.172-.462.026l-.095-.041.286-.271-.326-.028c.039-.155.211-.291.361-.182-.104-.484-.53-.835-.811-1.253z"
+                        ></path>
+                      </g>
+                    </svg>
+                    Quick Response Time
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 1300 10"
+                      height="3"
+                      preserveAspectRatio="none"
+                      class="absolute top-0 left-0 w-full h-[3px] fill-sky-600/20"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M1264.29 4.85c-1.04-.029-17.58-1.783-26.79-1.35-.37.018-11.97-.122-12.33-.146-.7-.048-1.76-.174-2.06-.13-9.7 1.458-20.01-.138-29.8.212-9.71.348-19.24.035-28.79-.08-4.81-.06-9 .034-13.18.402-.34.029-.71.141-.86.128-10.56-.803-22.39.909-32.63-.561-1.93-.278-4.38-.178-6.66-.143-.51.346-1.18.73-3.66.558-2.1-.146-3.84-.456-5.88-.648-2.58-.244-6.03-.718-7.52.087-1.25.683 4.71.299 5.18 1.013-2.88-.171-6.11-.238-8.47-.535-3.21-.406-5.99-.487-9.57-.22-1.65.123-4.45.18-5.58.01-7.74-1.166-15.7-.01-23.5-.135-6.53-.107-3.97.723-3.05 1.428-1.41-.191-2.41-.286-3.09-.428-2.27-.47-2.53-1.764-8.48-.661-4.25-.645-9.56-.795-14.69-1-6.03-.243-6.8-.045-6 1.369.22.042.64.087.62.123-.07.104-.31.203-.49.305l-.72.085.49-.116c.13-.131.16-.263.1-.396-3.27-.349-6.17-.766-9.09-1.221-6.85-1.064-12.261-.719-15.806.836-9.731-1.469-9.731-1.469-17.434.517-4.97-.687-9.437-1.73-16.304-1.557-4.087.102-7.494-.071-11.182-.133-6.645-.112-13.223-.139-19.763-.478-2.518-.13-3.623.404-4.689.771l.589.111-.635-.101c-6.199.61-10.777-1.021-16.977-.409-9.018-1.128-14.884-.299-20.2 1.371-3.734-1.341-9.221-1.92-15.964-1.453-5.702.392-12.726-.804-17.467.596-1.504.445-4.296.175-5.807-.166-5.16-1.164-6.5-.121-8.665.471-4.512.112-3.643-1.363-8.56-1.019-4.676.326-6.18 1.162-7.612 1.96-.118.066-.177.136-.269.202-.66.47-1.092 1.103-4.898.68-2.452-.274-3.243-.777-.405-1.202 1.471-.221 3.387-.438 2.047-.819-1.151-.326-3.708-.349-5.154-.169-2.968.367-5.002.348-7.755-.1-3.532-.574-8.535-.494-12.884-.693-2.393-.11-2.838.338-3.237.68-1.092.181-1.085.363-.006.546-1.55.231-2.642.197-3.499-.156-2.367-.976-4.166-1.891-12.366-1.196-3.512.298-9.031-.184-13.622-.331-.654-.021-1.459-.236-1.772-.206-8.58.776-17.121-.089-25.655.001-1.805.019-2.544.247-2.355.571.242.135 1.969.194.628.409l-.902-.37c-1.923-.233-3.885-.487-6.331-.332-5.022.318-9.456.205-14.145-.307-3.374-.367-7.71-.677-10.823.233-.857.25-1.831.068-2.831-.045-4.781-.533-5.54.019-4.192.647 1.36.637-1.047 1.236 1.373 1.883-1.615-.068-2.505-.056-2.832-.129-3.073-.675-.163-2.203-7.795-2.147-5.134.037-9.652-.871-15.015-.208-1.648.204-3.544-.149-5.317-.253-9.227-.536-9.371-.525-15.943 1.022-6.605-1.033-14.06-1.331-22.379-.846-1.929.113-2.701-.123-3.59-.345.177-.046.523-.099.484-.138-.111-.121-.582-.116-1.19.006-3.904.436-7.063 1.227-12.622.348-3.263-.518-8.56-.144-12.942-.48-3.021-.231-6.48.233-6.284 1.053 1.739.459 2.688.93.732 1.541-.359-.567-.654-1.04-.948-1.513-3.649-.587-8.403-.846-12.517-1.28-6.212-.655-13.465-.489-19.455.426l-.706.082.595-.106c-1.511-.356-4.002-.659-5.834-.427-6.624.839-12.713.036-19.01-.076-1.766-.408-3.545-.351-5.336-.005-2.839.004-5.677.008-8.515.01-1.288-.144-1.589-.104-.778.14-.288.125-.785.361-.844.357-8.102-.489-16.185-.884-24.386-.063-3.597-.759-6.232-.452-8.626.245-.255.076-1.131.146-1.595.125-17.991-.824-26.885-.888-39.12-.27-1.073.053-2.871.193-3.159.127-2.969-.703-5.369-.506-9.659-.249-2.956.176-7.534-.287-11.17.314-1.177.193-2.949.018-4.244-.14-7.553-.923-15.237-.827-23.582-.311-3.06.189-7.37.21-10.862-.148.196-.043.582-.093.549-.129-.111-.119-.549-.11-1.118.023-4.977-.072-10.705.559-14.642-.528-.275-.076-2.021-.078-2.04-.065-1.982 1.359-8.548.075-12.772.757-3.663.592-10.457-.454-15.336-.212-6.971.346-14.557-.346-20.985.523-.471.063-1.589.044-2.165-.014-7.73-.799-16.951.133-24.726-.729-1.766-.196-4.565-.217-6.703-.142-12.288.427-24.779.084-37.184.408-6.749.177-14.303-.027-21.202-.173-6.18-.13-11.994.044-17.951.02-12.033-.049-24.066.104-36.112-.082-5.591-.085-11.438.04-16.892.167-17.604.411-35.268.551-52.918.592-14.466.035-28.434.592-42.612.868-15.041.292-28.552 1.382-42.965 1.94-2.217.085-4.545.185-6.475.389-4.878.514-4.728 1.471.288 1.929 2.001.184 4.421.371 6.54.335 15.636-.27 31.128.168 46.679.283 22.784.169 45.359-.419 68.052-.504 29.755-.114 59.34-.708 89.278-.504 18.9.129 38.152-.092 57.196-.019 15.126.057 30.35-.175 45.45.322 10.921.361 21.816-.337 32.861-.17 35.484.532 71.073.004 106.596.294 27.159.222 54.318-.062 81.477-.05 17.435.007 34.876.382 52.304.345 15.257-.031 30.566-.035 45.771.02 25.936.094 51.976-.333 77.847.336 3.773.098 7.638.101 11.464.102 32.031.016 64.121-.19 96.086.085 36.184.309 72.374.154 108.499.415 19.004.136 38.139.053 56.986.416 21.008.404 42.128.031 62.908.456 23.6.483 47.32.509 70.85.622 41.9.2 83.75.739 125.69.698 6.32-.005 12.82.272 19.34.271 6.14-.001 11.83-.066 17.48-.712 7.09-.809 22.11-1.993 14.86-1.993-13.62.001-20.21-2.073-33.78-2.445z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </li>
+
+                  <li
+                    class="flex relative items-center py-2.5 pl-4 xs:pl-12 sm:pl-14 pr-7"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 42 43"
+                      width="14"
+                      class="w-3 h-auto shrink-0 fill-emerald-500 mr-3 mb-0.5"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M8.581 29.619l.23-.013-.122-.109-.109.122-.251-.334c.173.021.303-.076.382-.23-.204-.011-.359-.15-.481-.32l.449-.257-.496-.158.123-.285c-.185.119-.352-.103-.271-.286l.238.103c.112-.165-.12-.56-.208-.823-.463.198-.243-.375-.033-.578-.1-.069-.208-.037-.299.04.075-.26-.185-.381-.42-.463l.218-.244c.088.063.038.147-.034.21l.38.164c-.151-.373-.3-.725-.718-.817.376-.335.029-.572.227-.917a62.19 62.19 0 01-.38-.164l.081.204-.258-.055-.055.258c-.325-.101-.129-.537.185-.427-.013-.357-.331-.327-.395-.002l-.169-.129c.207-.111.373-.268.436-.488-.114-.017-.079-.152-.06-.252l-.442-.022c.078-.311-.073-.525-.399-.51a.352.352 0 00-.059-.646l.039.299c-.252-.107-.272-.485-.583-.477.136-.166.307-.365.178-.543-.155.094-.363.208-.28.386l-.406-.232c.671-.056.284-.37.145-.727-.201.263-.756-.165-.292-.238-.106-.134-.273-.148-.252.06-.304-.244-.81-.522-.561-.919-.239-.086-.535-.567-1.324-.7-.88-.149-2.255.059-2.42.172.169.305-.471.988.317.7-.996.784.074 2.219-.146 3.207l.19.082c-.125.514.345 1.373.64 1.912.136-.215.421-.218.422.069-.568-.247-.161.677.08.204.453.755-1.328-.077.56 1.313a1.944 1.944 0 01-.041.095 24.27 24.27 0 01-.237-.103c-.041.216-.24.27-.449.257l.351.885c.07-.135.196-.185.34-.135l.062-.537.19.082c-.086.312-.118.594-.159.89-.079-.118-.181-.289-.312-.191.233.263-.127.835.355.942.389.089.179.233-.042.292.621.909.612 2.247 1.366 3.099l-.197.197c.131.23.174.552.549.687l-.171.265c.357.527.43 1.989 1.537 1.792-.267.193-.557.179-.747-.098l-.008.279.184-.034c-.043.131.05.211.176.246l-.382.229c.192.298.758.424.467.878.154.033.218.159.203.313l.299-.039-.103.237.142.062c-.078.097-.158.194-.238.291l.163.014-.006-.115.054.136c.134-.099.296.08.427.184-.428.064-.521.891-.002.789l-.035.21.394.001-.013.164c-.135-.107-.261.064-.361.182.252.005.354.281.611.151-.176.221.148.388-.084.584.456-.116.179.302-.024.384.139.315.751-.133.538.514l.231-.012c.007.301-.333 1.928.228 1.169.225.233 1.136-.034.658.566.572.51 1.774-1.112 1.596-.043a.718.718 0 01.681-.27l-.047-.414c.748-.048 1.673-1.196 2.03-1.829l.123.109c-.001-.214.169-.317.374-.345l-.114-.388c.545-.166 1.311-.976 1.465-1.565l.258.055-.06-.252c.474-.429 1.877-1.732 1.841-2.305.529.162.813-1.193 1.326-1.372.469-.092-.187-.564.233-.604.996-.632 1.623-1.719 2.263-2.63.184-.237.751-.053.366-.518.418-.065.695-.695.845-1.044.375-.056.614-.991 1.009-1.03-.057-.337.54-.41.301-.828.155.012.288-.046.361-.183l.122.109c.03-.111-.014-.2-.129-.224.073-.148.197-.242.341-.135.04-.139.065-.296-.067-.367.261-.056.58-.33.361-.577.406.246.554-.257.362-.576.113-.036.141.077.149.177.249-.18.603-.646.642-.963.49.291.229-.141.443-.372-.112-.048-.27-.096-.245-.219.217-.006.268.228.496.158-.102-.15-.022-.296.117-.401l-.231.013c.046-.206.234-.215.367-.066.157-.241.293-.845.661-.617.088-.127.05-.251-.088-.32.401.028.434-.672.798-.67l-.135-.34c.25.017.521-.342.694-.433-.213-.015-.352-.138-.298-.354 1.133-.034 1.429-1.506 2.242-2.188l.101.156c.042-.094.083-.19.124-.285l-.184.034c-.097-.448.963-.598.594-.984l.279.008c-.237-.489 1.11-.574.342-.923.633.045 1.024-.691 1.227-1.274l.17.13c.257-.4.623-.596.676-1.174l.19.082c.254-.467.715-.957 1.036-1.356a45.172 45.172 0 01-.128-.225c.173-.129.368-.149.489.043.151-.325.314-.691.363-.971.368-.116.779-.34.723-.759.67-.163.95-1.517 1.656-1.877l-.095-.041-.061.142c-.171-.051-.33-.151-.251-.333l.285.123c.121-.484.675-.462.859-.813l-.143-.062c.196-.065.259-.251.253-.454.452-.208.951-.756 1.233-1.158l.143.061c-.155-.493.226-.361.397-.787l.169.13c-.338-.404.961-.524.369-.856l.259-.338c-.367-.178.094-.385.245-.176.025-.117.04-.293.172-.265-.344-.042-.341-.381-.584-.477.351-.151-.317-.675.267-.618-.117-.105-.386-.236-.298-.354l.312.191c.022-.295.319-.204.46-.28.015-.389-.58.146-.628-.244L40.347 3c-.046-.443.18-.909.297-1.337-.019.099-.054.235.06.251.114-.191.147-.404-.053-.53-.003.425-.548-.108-.755.181-.085-.073.094-.789-.181-.754l-.082.19.143.061c-.017.114-.152.08-.252.061l-.035.21c-.179-.147-.374-.347-.168-.523l-.237-.103c-.052.317-.534.141-.238-.103l-.19-.082-.062.143c-.469-.288-.723-.813-1.123-.204-.29.088-.523-.383-.771-.107-.096-.168-.341.013-.246.175-.573.029-1.314.414-.682 1.058-.274-.178-.692.059-.844.256l.238.102c-.258.423-.805-.287-.763.46-.169-.138-.321.202-.503.121l.123.109c.089-.214.287-.072.428-.209l-.062.537a19.219 19.219 0 00-.17-.13c-.7.342-.942 1.15-1.513 1.545l.4.116c-.028.151-.339.023-.509.006l-.008.278c-.214.435-1.841 1.226-1.438 1.634l-.034.21c-.673-.222-.276.198-.111.516-.343-.225-.727.361-1 .358.215.344-.33.482-.186.821-.292-.069-.249.347-.463.42l.237.103c-.537-.304-.591.623-1.129.526-.054.216.085.34.298.355-1.015.264-1.251 1.731-2.133 2.066l.421.069c-.542.372-.966.553-.901 1.302l-.163-.014.062-.142c-.483 0-.623.704-.883.999-.507.162-.36.351-.386.763-.26-.261-1.578.908-.941 1.003-.087.171-.315.23-.517.284l.149.177c-.348.227-.138.963-.791.786.081.205-.517.383-.361.577-.359.088-.569.316-.315.597-.27.106-.765.544-1.001.751l.095.041c-.11.153-.229.355-.021.442-.628-.064.604.891-.363.576.08-.103-.098-.249-.182-.361l.054.136c-.171.022-.17.297-.205.475a52.304 52.304 0 01-.312-.191c.084.316-.235.617-.41.95l.346-.019-.117.4-.175-.244c-.002.301-.506.29-.41.556-.589-.068-.875.591-1.314.954l.142.061c-.121.205-.4.406-.572.542l.203.313a10.86 10.86 0 01-.19-.082c-.557.711-1.43 1.157-1.644 2.109-.421-.059-.405.954-.676 1.173-.092-.095-.209-.137-.279-.007.207.098.417.243.305.469l-.238-.102.11-.122-.184.033-.013-.231c-.252.058-.509.417-.566.658-.457.146-.59 1.17-1.132 1.314-.172.513-1.229.841-1.024 1.587-.196-.011-.451-.02-.429.21a2.715 2.715 0 00-.095-.041c-.004.362-.221.615-.383 1.018.943.342.2.249-.029.72a.756.756 0 00-.243-.612c-.088.124-.186.409-.307.318-.219.564-.643 1.161-.748 1.012-.575.201.108-.953-.234-1.286-.313.482-.271-.072-.135-.34-.167-.043-.432-.172-.462.026l-.095-.041.286-.271-.326-.028c.039-.155.211-.291.361-.182-.104-.484-.53-.835-.811-1.253z"
+                        ></path>
+                      </g>
+                    </svg>
+                    No Surprises on Your Bill
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 1300 10"
+                      height="3"
+                      preserveAspectRatio="none"
+                      class="absolute top-0 left-0 w-full h-[3px] fill-sky-600/20"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M1264.29 4.85c-1.04-.029-17.58-1.783-26.79-1.35-.37.018-11.97-.122-12.33-.146-.7-.048-1.76-.174-2.06-.13-9.7 1.458-20.01-.138-29.8.212-9.71.348-19.24.035-28.79-.08-4.81-.06-9 .034-13.18.402-.34.029-.71.141-.86.128-10.56-.803-22.39.909-32.63-.561-1.93-.278-4.38-.178-6.66-.143-.51.346-1.18.73-3.66.558-2.1-.146-3.84-.456-5.88-.648-2.58-.244-6.03-.718-7.52.087-1.25.683 4.71.299 5.18 1.013-2.88-.171-6.11-.238-8.47-.535-3.21-.406-5.99-.487-9.57-.22-1.65.123-4.45.18-5.58.01-7.74-1.166-15.7-.01-23.5-.135-6.53-.107-3.97.723-3.05 1.428-1.41-.191-2.41-.286-3.09-.428-2.27-.47-2.53-1.764-8.48-.661-4.25-.645-9.56-.795-14.69-1-6.03-.243-6.8-.045-6 1.369.22.042.64.087.62.123-.07.104-.31.203-.49.305l-.72.085.49-.116c.13-.131.16-.263.1-.396-3.27-.349-6.17-.766-9.09-1.221-6.85-1.064-12.261-.719-15.806.836-9.731-1.469-9.731-1.469-17.434.517-4.97-.687-9.437-1.73-16.304-1.557-4.087.102-7.494-.071-11.182-.133-6.645-.112-13.223-.139-19.763-.478-2.518-.13-3.623.404-4.689.771l.589.111-.635-.101c-6.199.61-10.777-1.021-16.977-.409-9.018-1.128-14.884-.299-20.2 1.371-3.734-1.341-9.221-1.92-15.964-1.453-5.702.392-12.726-.804-17.467.596-1.504.445-4.296.175-5.807-.166-5.16-1.164-6.5-.121-8.665.471-4.512.112-3.643-1.363-8.56-1.019-4.676.326-6.18 1.162-7.612 1.96-.118.066-.177.136-.269.202-.66.47-1.092 1.103-4.898.68-2.452-.274-3.243-.777-.405-1.202 1.471-.221 3.387-.438 2.047-.819-1.151-.326-3.708-.349-5.154-.169-2.968.367-5.002.348-7.755-.1-3.532-.574-8.535-.494-12.884-.693-2.393-.11-2.838.338-3.237.68-1.092.181-1.085.363-.006.546-1.55.231-2.642.197-3.499-.156-2.367-.976-4.166-1.891-12.366-1.196-3.512.298-9.031-.184-13.622-.331-.654-.021-1.459-.236-1.772-.206-8.58.776-17.121-.089-25.655.001-1.805.019-2.544.247-2.355.571.242.135 1.969.194.628.409l-.902-.37c-1.923-.233-3.885-.487-6.331-.332-5.022.318-9.456.205-14.145-.307-3.374-.367-7.71-.677-10.823.233-.857.25-1.831.068-2.831-.045-4.781-.533-5.54.019-4.192.647 1.36.637-1.047 1.236 1.373 1.883-1.615-.068-2.505-.056-2.832-.129-3.073-.675-.163-2.203-7.795-2.147-5.134.037-9.652-.871-15.015-.208-1.648.204-3.544-.149-5.317-.253-9.227-.536-9.371-.525-15.943 1.022-6.605-1.033-14.06-1.331-22.379-.846-1.929.113-2.701-.123-3.59-.345.177-.046.523-.099.484-.138-.111-.121-.582-.116-1.19.006-3.904.436-7.063 1.227-12.622.348-3.263-.518-8.56-.144-12.942-.48-3.021-.231-6.48.233-6.284 1.053 1.739.459 2.688.93.732 1.541-.359-.567-.654-1.04-.948-1.513-3.649-.587-8.403-.846-12.517-1.28-6.212-.655-13.465-.489-19.455.426l-.706.082.595-.106c-1.511-.356-4.002-.659-5.834-.427-6.624.839-12.713.036-19.01-.076-1.766-.408-3.545-.351-5.336-.005-2.839.004-5.677.008-8.515.01-1.288-.144-1.589-.104-.778.14-.288.125-.785.361-.844.357-8.102-.489-16.185-.884-24.386-.063-3.597-.759-6.232-.452-8.626.245-.255.076-1.131.146-1.595.125-17.991-.824-26.885-.888-39.12-.27-1.073.053-2.871.193-3.159.127-2.969-.703-5.369-.506-9.659-.249-2.956.176-7.534-.287-11.17.314-1.177.193-2.949.018-4.244-.14-7.553-.923-15.237-.827-23.582-.311-3.06.189-7.37.21-10.862-.148.196-.043.582-.093.549-.129-.111-.119-.549-.11-1.118.023-4.977-.072-10.705.559-14.642-.528-.275-.076-2.021-.078-2.04-.065-1.982 1.359-8.548.075-12.772.757-3.663.592-10.457-.454-15.336-.212-6.971.346-14.557-.346-20.985.523-.471.063-1.589.044-2.165-.014-7.73-.799-16.951.133-24.726-.729-1.766-.196-4.565-.217-6.703-.142-12.288.427-24.779.084-37.184.408-6.749.177-14.303-.027-21.202-.173-6.18-.13-11.994.044-17.951.02-12.033-.049-24.066.104-36.112-.082-5.591-.085-11.438.04-16.892.167-17.604.411-35.268.551-52.918.592-14.466.035-28.434.592-42.612.868-15.041.292-28.552 1.382-42.965 1.94-2.217.085-4.545.185-6.475.389-4.878.514-4.728 1.471.288 1.929 2.001.184 4.421.371 6.54.335 15.636-.27 31.128.168 46.679.283 22.784.169 45.359-.419 68.052-.504 29.755-.114 59.34-.708 89.278-.504 18.9.129 38.152-.092 57.196-.019 15.126.057 30.35-.175 45.45.322 10.921.361 21.816-.337 32.861-.17 35.484.532 71.073.004 106.596.294 27.159.222 54.318-.062 81.477-.05 17.435.007 34.876.382 52.304.345 15.257-.031 30.566-.035 45.771.02 25.936.094 51.976-.333 77.847.336 3.773.098 7.638.101 11.464.102 32.031.016 64.121-.19 96.086.085 36.184.309 72.374.154 108.499.415 19.004.136 38.139.053 56.986.416 21.008.404 42.128.031 62.908.456 23.6.483 47.32.509 70.85.622 41.9.2 83.75.739 125.69.698 6.32-.005 12.82.272 19.34.271 6.14-.001 11.83-.066 17.48-.712 7.09-.809 22.11-1.993 14.86-1.993-13.62.001-20.21-2.073-33.78-2.445z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </li>
+
+                  <li
+                    class="flex relative items-center py-2.5 pl-4 xs:pl-12 sm:pl-14 pr-7"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 42 43"
+                      width="14"
+                      class="w-3 h-auto shrink-0 fill-emerald-500 mr-3 mb-0.5"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M8.581 29.619l.23-.013-.122-.109-.109.122-.251-.334c.173.021.303-.076.382-.23-.204-.011-.359-.15-.481-.32l.449-.257-.496-.158.123-.285c-.185.119-.352-.103-.271-.286l.238.103c.112-.165-.12-.56-.208-.823-.463.198-.243-.375-.033-.578-.1-.069-.208-.037-.299.04.075-.26-.185-.381-.42-.463l.218-.244c.088.063.038.147-.034.21l.38.164c-.151-.373-.3-.725-.718-.817.376-.335.029-.572.227-.917a62.19 62.19 0 01-.38-.164l.081.204-.258-.055-.055.258c-.325-.101-.129-.537.185-.427-.013-.357-.331-.327-.395-.002l-.169-.129c.207-.111.373-.268.436-.488-.114-.017-.079-.152-.06-.252l-.442-.022c.078-.311-.073-.525-.399-.51a.352.352 0 00-.059-.646l.039.299c-.252-.107-.272-.485-.583-.477.136-.166.307-.365.178-.543-.155.094-.363.208-.28.386l-.406-.232c.671-.056.284-.37.145-.727-.201.263-.756-.165-.292-.238-.106-.134-.273-.148-.252.06-.304-.244-.81-.522-.561-.919-.239-.086-.535-.567-1.324-.7-.88-.149-2.255.059-2.42.172.169.305-.471.988.317.7-.996.784.074 2.219-.146 3.207l.19.082c-.125.514.345 1.373.64 1.912.136-.215.421-.218.422.069-.568-.247-.161.677.08.204.453.755-1.328-.077.56 1.313a1.944 1.944 0 01-.041.095 24.27 24.27 0 01-.237-.103c-.041.216-.24.27-.449.257l.351.885c.07-.135.196-.185.34-.135l.062-.537.19.082c-.086.312-.118.594-.159.89-.079-.118-.181-.289-.312-.191.233.263-.127.835.355.942.389.089.179.233-.042.292.621.909.612 2.247 1.366 3.099l-.197.197c.131.23.174.552.549.687l-.171.265c.357.527.43 1.989 1.537 1.792-.267.193-.557.179-.747-.098l-.008.279.184-.034c-.043.131.05.211.176.246l-.382.229c.192.298.758.424.467.878.154.033.218.159.203.313l.299-.039-.103.237.142.062c-.078.097-.158.194-.238.291l.163.014-.006-.115.054.136c.134-.099.296.08.427.184-.428.064-.521.891-.002.789l-.035.21.394.001-.013.164c-.135-.107-.261.064-.361.182.252.005.354.281.611.151-.176.221.148.388-.084.584.456-.116.179.302-.024.384.139.315.751-.133.538.514l.231-.012c.007.301-.333 1.928.228 1.169.225.233 1.136-.034.658.566.572.51 1.774-1.112 1.596-.043a.718.718 0 01.681-.27l-.047-.414c.748-.048 1.673-1.196 2.03-1.829l.123.109c-.001-.214.169-.317.374-.345l-.114-.388c.545-.166 1.311-.976 1.465-1.565l.258.055-.06-.252c.474-.429 1.877-1.732 1.841-2.305.529.162.813-1.193 1.326-1.372.469-.092-.187-.564.233-.604.996-.632 1.623-1.719 2.263-2.63.184-.237.751-.053.366-.518.418-.065.695-.695.845-1.044.375-.056.614-.991 1.009-1.03-.057-.337.54-.41.301-.828.155.012.288-.046.361-.183l.122.109c.03-.111-.014-.2-.129-.224.073-.148.197-.242.341-.135.04-.139.065-.296-.067-.367.261-.056.58-.33.361-.577.406.246.554-.257.362-.576.113-.036.141.077.149.177.249-.18.603-.646.642-.963.49.291.229-.141.443-.372-.112-.048-.27-.096-.245-.219.217-.006.268.228.496.158-.102-.15-.022-.296.117-.401l-.231.013c.046-.206.234-.215.367-.066.157-.241.293-.845.661-.617.088-.127.05-.251-.088-.32.401.028.434-.672.798-.67l-.135-.34c.25.017.521-.342.694-.433-.213-.015-.352-.138-.298-.354 1.133-.034 1.429-1.506 2.242-2.188l.101.156c.042-.094.083-.19.124-.285l-.184.034c-.097-.448.963-.598.594-.984l.279.008c-.237-.489 1.11-.574.342-.923.633.045 1.024-.691 1.227-1.274l.17.13c.257-.4.623-.596.676-1.174l.19.082c.254-.467.715-.957 1.036-1.356a45.172 45.172 0 01-.128-.225c.173-.129.368-.149.489.043.151-.325.314-.691.363-.971.368-.116.779-.34.723-.759.67-.163.95-1.517 1.656-1.877l-.095-.041-.061.142c-.171-.051-.33-.151-.251-.333l.285.123c.121-.484.675-.462.859-.813l-.143-.062c.196-.065.259-.251.253-.454.452-.208.951-.756 1.233-1.158l.143.061c-.155-.493.226-.361.397-.787l.169.13c-.338-.404.961-.524.369-.856l.259-.338c-.367-.178.094-.385.245-.176.025-.117.04-.293.172-.265-.344-.042-.341-.381-.584-.477.351-.151-.317-.675.267-.618-.117-.105-.386-.236-.298-.354l.312.191c.022-.295.319-.204.46-.28.015-.389-.58.146-.628-.244L40.347 3c-.046-.443.18-.909.297-1.337-.019.099-.054.235.06.251.114-.191.147-.404-.053-.53-.003.425-.548-.108-.755.181-.085-.073.094-.789-.181-.754l-.082.19.143.061c-.017.114-.152.08-.252.061l-.035.21c-.179-.147-.374-.347-.168-.523l-.237-.103c-.052.317-.534.141-.238-.103l-.19-.082-.062.143c-.469-.288-.723-.813-1.123-.204-.29.088-.523-.383-.771-.107-.096-.168-.341.013-.246.175-.573.029-1.314.414-.682 1.058-.274-.178-.692.059-.844.256l.238.102c-.258.423-.805-.287-.763.46-.169-.138-.321.202-.503.121l.123.109c.089-.214.287-.072.428-.209l-.062.537a19.219 19.219 0 00-.17-.13c-.7.342-.942 1.15-1.513 1.545l.4.116c-.028.151-.339.023-.509.006l-.008.278c-.214.435-1.841 1.226-1.438 1.634l-.034.21c-.673-.222-.276.198-.111.516-.343-.225-.727.361-1 .358.215.344-.33.482-.186.821-.292-.069-.249.347-.463.42l.237.103c-.537-.304-.591.623-1.129.526-.054.216.085.34.298.355-1.015.264-1.251 1.731-2.133 2.066l.421.069c-.542.372-.966.553-.901 1.302l-.163-.014.062-.142c-.483 0-.623.704-.883.999-.507.162-.36.351-.386.763-.26-.261-1.578.908-.941 1.003-.087.171-.315.23-.517.284l.149.177c-.348.227-.138.963-.791.786.081.205-.517.383-.361.577-.359.088-.569.316-.315.597-.27.106-.765.544-1.001.751l.095.041c-.11.153-.229.355-.021.442-.628-.064.604.891-.363.576.08-.103-.098-.249-.182-.361l.054.136c-.171.022-.17.297-.205.475a52.304 52.304 0 01-.312-.191c.084.316-.235.617-.41.95l.346-.019-.117.4-.175-.244c-.002.301-.506.29-.41.556-.589-.068-.875.591-1.314.954l.142.061c-.121.205-.4.406-.572.542l.203.313a10.86 10.86 0 01-.19-.082c-.557.711-1.43 1.157-1.644 2.109-.421-.059-.405.954-.676 1.173-.092-.095-.209-.137-.279-.007.207.098.417.243.305.469l-.238-.102.11-.122-.184.033-.013-.231c-.252.058-.509.417-.566.658-.457.146-.59 1.17-1.132 1.314-.172.513-1.229.841-1.024 1.587-.196-.011-.451-.02-.429.21a2.715 2.715 0 00-.095-.041c-.004.362-.221.615-.383 1.018.943.342.2.249-.029.72a.756.756 0 00-.243-.612c-.088.124-.186.409-.307.318-.219.564-.643 1.161-.748 1.012-.575.201.108-.953-.234-1.286-.313.482-.271-.072-.135-.34-.167-.043-.432-.172-.462.026l-.095-.041.286-.271-.326-.028c.039-.155.211-.291.361-.182-.104-.484-.53-.835-.811-1.253z"
+                        ></path>
+                      </g>
+                    </svg>
+                    Comprehensive Error Coverage
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 1300 10"
+                      height="3"
+                      preserveAspectRatio="none"
+                      class="absolute top-0 left-0 w-full h-[3px] fill-sky-600/20"
+                    >
+                      <g buffered-rendering="static">
+                        <path
+                          d="M1264.29 4.85c-1.04-.029-17.58-1.783-26.79-1.35-.37.018-11.97-.122-12.33-.146-.7-.048-1.76-.174-2.06-.13-9.7 1.458-20.01-.138-29.8.212-9.71.348-19.24.035-28.79-.08-4.81-.06-9 .034-13.18.402-.34.029-.71.141-.86.128-10.56-.803-22.39.909-32.63-.561-1.93-.278-4.38-.178-6.66-.143-.51.346-1.18.73-3.66.558-2.1-.146-3.84-.456-5.88-.648-2.58-.244-6.03-.718-7.52.087-1.25.683 4.71.299 5.18 1.013-2.88-.171-6.11-.238-8.47-.535-3.21-.406-5.99-.487-9.57-.22-1.65.123-4.45.18-5.58.01-7.74-1.166-15.7-.01-23.5-.135-6.53-.107-3.97.723-3.05 1.428-1.41-.191-2.41-.286-3.09-.428-2.27-.47-2.53-1.764-8.48-.661-4.25-.645-9.56-.795-14.69-1-6.03-.243-6.8-.045-6 1.369.22.042.64.087.62.123-.07.104-.31.203-.49.305l-.72.085.49-.116c.13-.131.16-.263.1-.396-3.27-.349-6.17-.766-9.09-1.221-6.85-1.064-12.261-.719-15.806.836-9.731-1.469-9.731-1.469-17.434.517-4.97-.687-9.437-1.73-16.304-1.557-4.087.102-7.494-.071-11.182-.133-6.645-.112-13.223-.139-19.763-.478-2.518-.13-3.623.404-4.689.771l.589.111-.635-.101c-6.199.61-10.777-1.021-16.977-.409-9.018-1.128-14.884-.299-20.2 1.371-3.734-1.341-9.221-1.92-15.964-1.453-5.702.392-12.726-.804-17.467.596-1.504.445-4.296.175-5.807-.166-5.16-1.164-6.5-.121-8.665.471-4.512.112-3.643-1.363-8.56-1.019-4.676.326-6.18 1.162-7.612 1.96-.118.066-.177.136-.269.202-.66.47-1.092 1.103-4.898.68-2.452-.274-3.243-.777-.405-1.202 1.471-.221 3.387-.438 2.047-.819-1.151-.326-3.708-.349-5.154-.169-2.968.367-5.002.348-7.755-.1-3.532-.574-8.535-.494-12.884-.693-2.393-.11-2.838.338-3.237.68-1.092.181-1.085.363-.006.546-1.55.231-2.642.197-3.499-.156-2.367-.976-4.166-1.891-12.366-1.196-3.512.298-9.031-.184-13.622-.331-.654-.021-1.459-.236-1.772-.206-8.58.776-17.121-.089-25.655.001-1.805.019-2.544.247-2.355.571.242.135 1.969.194.628.409l-.902-.37c-1.923-.233-3.885-.487-6.331-.332-5.022.318-9.456.205-14.145-.307-3.374-.367-7.71-.677-10.823.233-.857.25-1.831.068-2.831-.045-4.781-.533-5.54.019-4.192.647 1.36.637-1.047 1.236 1.373 1.883-1.615-.068-2.505-.056-2.832-.129-3.073-.675-.163-2.203-7.795-2.147-5.134.037-9.652-.871-15.015-.208-1.648.204-3.544-.149-5.317-.253-9.227-.536-9.371-.525-15.943 1.022-6.605-1.033-14.06-1.331-22.379-.846-1.929.113-2.701-.123-3.59-.345.177-.046.523-.099.484-.138-.111-.121-.582-.116-1.19.006-3.904.436-7.063 1.227-12.622.348-3.263-.518-8.56-.144-12.942-.48-3.021-.231-6.48.233-6.284 1.053 1.739.459 2.688.93.732 1.541-.359-.567-.654-1.04-.948-1.513-3.649-.587-8.403-.846-12.517-1.28-6.212-.655-13.465-.489-19.455.426l-.706.082.595-.106c-1.511-.356-4.002-.659-5.834-.427-6.624.839-12.713.036-19.01-.076-1.766-.408-3.545-.351-5.336-.005-2.839.004-5.677.008-8.515.01-1.288-.144-1.589-.104-.778.14-.288.125-.785.361-.844.357-8.102-.489-16.185-.884-24.386-.063-3.597-.759-6.232-.452-8.626.245-.255.076-1.131.146-1.595.125-17.991-.824-26.885-.888-39.12-.27-1.073.053-2.871.193-3.159.127-2.969-.703-5.369-.506-9.659-.249-2.956.176-7.534-.287-11.17.314-1.177.193-2.949.018-4.244-.14-7.553-.923-15.237-.827-23.582-.311-3.06.189-7.37.21-10.862-.148.196-.043.582-.093.549-.129-.111-.119-.549-.11-1.118.023-4.977-.072-10.705.559-14.642-.528-.275-.076-2.021-.078-2.04-.065-1.982 1.359-8.548.075-12.772.757-3.663.592-10.457-.454-15.336-.212-6.971.346-14.557-.346-20.985.523-.471.063-1.589.044-2.165-.014-7.73-.799-16.951.133-24.726-.729-1.766-.196-4.565-.217-6.703-.142-12.288.427-24.779.084-37.184.408-6.749.177-14.303-.027-21.202-.173-6.18-.13-11.994.044-17.951.02-12.033-.049-24.066.104-36.112-.082-5.591-.085-11.438.04-16.892.167-17.604.411-35.268.551-52.918.592-14.466.035-28.434.592-42.612.868-15.041.292-28.552 1.382-42.965 1.94-2.217.085-4.545.185-6.475.389-4.878.514-4.728 1.471.288 1.929 2.001.184 4.421.371 6.54.335 15.636-.27 31.128.168 46.679.283 22.784.169 45.359-.419 68.052-.504 29.755-.114 59.34-.708 89.278-.504 18.9.129 38.152-.092 57.196-.019 15.126.057 30.35-.175 45.45.322 10.921.361 21.816-.337 32.861-.17 35.484.532 71.073.004 106.596.294 27.159.222 54.318-.062 81.477-.05 17.435.007 34.876.382 52.304.345 15.257-.031 30.566-.035 45.771.02 25.936.094 51.976-.333 77.847.336 3.773.098 7.638.101 11.464.102 32.031.016 64.121-.19 96.086.085 36.184.309 72.374.154 108.499.415 19.004.136 38.139.053 56.986.416 21.008.404 42.128.031 62.908.456 23.6.483 47.32.509 70.85.622 41.9.2 83.75.739 125.69.698 6.32-.005 12.82.272 19.34.271 6.14-.001 11.83-.066 17.48-.712 7.09-.809 22.11-1.993 14.86-1.993-13.62.001-20.21-2.073-33.78-2.445z"
+                        ></path>
+                      </g>
+                    </svg>
+                  </li>
+
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 1300 10"
+                    height="3"
+                    preserveAspectRatio="none"
+                    class="absolute bottom-10 left-0 w-full h-[3px] fill-sky-600/20"
+                  >
+                    <g buffered-rendering="static">
+                      <path
+                        d="M1264.29 4.85c-1.04-.029-17.58-1.783-26.79-1.35-.37.018-11.97-.122-12.33-.146-.7-.048-1.76-.174-2.06-.13-9.7 1.458-20.01-.138-29.8.212-9.71.348-19.24.035-28.79-.08-4.81-.06-9 .034-13.18.402-.34.029-.71.141-.86.128-10.56-.803-22.39.909-32.63-.561-1.93-.278-4.38-.178-6.66-.143-.51.346-1.18.73-3.66.558-2.1-.146-3.84-.456-5.88-.648-2.58-.244-6.03-.718-7.52.087-1.25.683 4.71.299 5.18 1.013-2.88-.171-6.11-.238-8.47-.535-3.21-.406-5.99-.487-9.57-.22-1.65.123-4.45.18-5.58.01-7.74-1.166-15.7-.01-23.5-.135-6.53-.107-3.97.723-3.05 1.428-1.41-.191-2.41-.286-3.09-.428-2.27-.47-2.53-1.764-8.48-.661-4.25-.645-9.56-.795-14.69-1-6.03-.243-6.8-.045-6 1.369.22.042.64.087.62.123-.07.104-.31.203-.49.305l-.72.085.49-.116c.13-.131.16-.263.1-.396-3.27-.349-6.17-.766-9.09-1.221-6.85-1.064-12.261-.719-15.806.836-9.731-1.469-9.731-1.469-17.434.517-4.97-.687-9.437-1.73-16.304-1.557-4.087.102-7.494-.071-11.182-.133-6.645-.112-13.223-.139-19.763-.478-2.518-.13-3.623.404-4.689.771l.589.111-.635-.101c-6.199.61-10.777-1.021-16.977-.409-9.018-1.128-14.884-.299-20.2 1.371-3.734-1.341-9.221-1.92-15.964-1.453-5.702.392-12.726-.804-17.467.596-1.504.445-4.296.175-5.807-.166-5.16-1.164-6.5-.121-8.665.471-4.512.112-3.643-1.363-8.56-1.019-4.676.326-6.18 1.162-7.612 1.96-.118.066-.177.136-.269.202-.66.47-1.092 1.103-4.898.68-2.452-.274-3.243-.777-.405-1.202 1.471-.221 3.387-.438 2.047-.819-1.151-.326-3.708-.349-5.154-.169-2.968.367-5.002.348-7.755-.1-3.532-.574-8.535-.494-12.884-.693-2.393-.11-2.838.338-3.237.68-1.092.181-1.085.363-.006.546-1.55.231-2.642.197-3.499-.156-2.367-.976-4.166-1.891-12.366-1.196-3.512.298-9.031-.184-13.622-.331-.654-.021-1.459-.236-1.772-.206-8.58.776-17.121-.089-25.655.001-1.805.019-2.544.247-2.355.571.242.135 1.969.194.628.409l-.902-.37c-1.923-.233-3.885-.487-6.331-.332-5.022.318-9.456.205-14.145-.307-3.374-.367-7.71-.677-10.823.233-.857.25-1.831.068-2.831-.045-4.781-.533-5.54.019-4.192.647 1.36.637-1.047 1.236 1.373 1.883-1.615-.068-2.505-.056-2.832-.129-3.073-.675-.163-2.203-7.795-2.147-5.134.037-9.652-.871-15.015-.208-1.648.204-3.544-.149-5.317-.253-9.227-.536-9.371-.525-15.943 1.022-6.605-1.033-14.06-1.331-22.379-.846-1.929.113-2.701-.123-3.59-.345.177-.046.523-.099.484-.138-.111-.121-.582-.116-1.19.006-3.904.436-7.063 1.227-12.622.348-3.263-.518-8.56-.144-12.942-.48-3.021-.231-6.48.233-6.284 1.053 1.739.459 2.688.93.732 1.541-.359-.567-.654-1.04-.948-1.513-3.649-.587-8.403-.846-12.517-1.28-6.212-.655-13.465-.489-19.455.426l-.706.082.595-.106c-1.511-.356-4.002-.659-5.834-.427-6.624.839-12.713.036-19.01-.076-1.766-.408-3.545-.351-5.336-.005-2.839.004-5.677.008-8.515.01-1.288-.144-1.589-.104-.778.14-.288.125-.785.361-.844.357-8.102-.489-16.185-.884-24.386-.063-3.597-.759-6.232-.452-8.626.245-.255.076-1.131.146-1.595.125-17.991-.824-26.885-.888-39.12-.27-1.073.053-2.871.193-3.159.127-2.969-.703-5.369-.506-9.659-.249-2.956.176-7.534-.287-11.17.314-1.177.193-2.949.018-4.244-.14-7.553-.923-15.237-.827-23.582-.311-3.06.189-7.37.21-10.862-.148.196-.043.582-.093.549-.129-.111-.119-.549-.11-1.118.023-4.977-.072-10.705.559-14.642-.528-.275-.076-2.021-.078-2.04-.065-1.982 1.359-8.548.075-12.772.757-3.663.592-10.457-.454-15.336-.212-6.971.346-14.557-.346-20.985.523-.471.063-1.589.044-2.165-.014-7.73-.799-16.951.133-24.726-.729-1.766-.196-4.565-.217-6.703-.142-12.288.427-24.779.084-37.184.408-6.749.177-14.303-.027-21.202-.173-6.18-.13-11.994.044-17.951.02-12.033-.049-24.066.104-36.112-.082-5.591-.085-11.438.04-16.892.167-17.604.411-35.268.551-52.918.592-14.466.035-28.434.592-42.612.868-15.041.292-28.552 1.382-42.965 1.94-2.217.085-4.545.185-6.475.389-4.878.514-4.728 1.471.288 1.929 2.001.184 4.421.371 6.54.335 15.636-.27 31.128.168 46.679.283 22.784.169 45.359-.419 68.052-.504 29.755-.114 59.34-.708 89.278-.504 18.9.129 38.152-.092 57.196-.019 15.126.057 30.35-.175 45.45.322 10.921.361 21.816-.337 32.861-.17 35.484.532 71.073.004 106.596.294 27.159.222 54.318-.062 81.477-.05 17.435.007 34.876.382 52.304.345 15.257-.031 30.566-.035 45.771.02 25.936.094 51.976-.333 77.847.336 3.773.098 7.638.101 11.464.102 32.031.016 64.121-.19 96.086.085 36.184.309 72.374.154 108.499.415 19.004.136 38.139.053 56.986.416 21.008.404 42.128.031 62.908.456 23.6.483 47.32.509 70.85.622 41.9.2 83.75.739 125.69.698 6.32-.005 12.82.272 19.34.271 6.14-.001 11.83-.066 17.48-.712 7.09-.809 22.11-1.993 14.86-1.993-13.62.001-20.21-2.073-33.78-2.445z"
+                      ></path>
+                    </g>
+                  </svg>
+                </ul>
+              </div>
+              <div class="py-12 xl:py-20">
+                <h2 class="font-heading text-2xl md:text-3xl text-navy -mt-1">
+                  Features That
+                  <span class="hidden xl:inline">Just </span>Make &nbsp;Sense
+                </h2>
+                <p class="block text-[17px] mt-3 xl:max-w-md">
+                  Looking for a surprise? Check Under Your Seat! Every cloud service user gets exclusive prizes (and much more) to enhance your experience.
+                </p>
+                
+               
+                
+
+                  <div
+                    class="flex items-center opacity-50 group-hover/btn:opacity-100 transition-opacity"
+                  >
+                    <svg
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width="0"
+                      height="10"
+                      fill="currentColor"
+                      class="w-0 group-hover/btn:w-[0.7em] h-[0.7em] -mr-[0.7em] ease-out duration-200 transition-all transform-gpu"
+                    >
+                      <path d="M1 9h14a1 1 0 000-2H1a1 1 0 000 2z"></path>
+                    </svg>
+                    <svg
+                      role="img"
+                      viewBox="0 0 16 16"
+                      width="10"
+                      height="10"
+                      fill="currentColor"
+                      class="size-[0.7em]"
+                    >
+                     
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="container mx-auto px-4 sm:px-6 lg:px-8 pb-24 xl:pb-28">
+            <h2 class="text-center font-bold text-3xl mb-8">Tools & Technologies</h2>
+            
+            <!-- Tools Container -->
+            <div class="tools-container">
+              <!-- Tool 1 -->
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm5PS6JVyx5NGEgS-Zr9f39qLvzkeA0-vwyg&s" alt="AWS" title="AWS">
+              
+              <!-- Tool 2 -->
+              <img src="https://miro.medium.com/v2/resize:fit:900/1*TY9uBBO9leUbRtlXmQBiug.png" alt="Node.js" title="Node.js">
+              
+              <!-- Tool 3 -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" title="React">
+              
+              <!-- Tool 4 -->
+              <img src="https://www.tensorflow.org/images/tf_logo_transp.png" title="Angular">
+              
+              <!-- Tool 5 -->
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuua9_FJgkEcyctuCWfVeE_g3pBuRbEcJBng&s" alt="Vue.js" title="Vue.js">
+              
+              <!-- Tool 6 -->
+              <img src="https://www.kreaweb.be/wp-content/uploads/2023/03/mysql.webp" alt="PostgreSQL" title="PostgreSQL">
+              
+              <!-- Tool 7 -->
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbqj9Ii13d6hx5a9kyLnC5A8A96LDSaSZv_w&s" alt="MySQL" title="MySQL">
+              
+              <!-- Tool 8 -->
+              <img src="https://www.gstatic.com/devrel-devsite/prod/v6f23042ee535b54d461e0cc5c1cc12493e4d0aea4f2d54a7a63063da7859ead0/firebase/images/touchicon-180.png" alt="Firebase" title="Firebase">
+              
+              <!-- Tool 9 -->
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript" title="JavaScript">
+              
+              <!-- Tool 10 -->
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSscr4Nfid4bYxU8cUAlwpcvGLX6LgilTOOng&s" alt="Docker" title="Docker">
+            </div>
+          </div>
+          <style>
+            /* Container styling */
+            .tools-container {
+              display: flex;
+              justify-content: center; /* Center align the icons */
+              align-items: center; /* Vertically align the icons */
+              flex-wrap: wrap; /* Allow wrapping if the screen is small */
+              gap: 30px; /* Space between icons */
+              padding: 40px 0;
+            }
+        
+            .tools-container img {
+              width: 60px;
+              height: 60px;
+              object-fit: contain;
+              transition: transform 0.3s ease-in-out;
+            }
+        
+            .tools-container img:hover {
+              transform: scale(1.2); /* Hover effect to scale up the icon */
+            }
+        
+            /* Optional: Adding a border to icons to make them stand out */
+            .tools-container img {
+              border: 2px solid #ddd;
+              padding: 10px;
+              border-radius: 10px;
+            }
+          </style>        
+        </article>
+      </main>
+      <div
+        role="alert"
+        class="fixed bottom-6 mb-14 lg:mb-0 left-1/2 transform -translate-x-1/2 w-max max-w-[94%] sm:max-w-lg z-50"
+      ></div>
+      <div
+        role="alert"
+        class="fixed bottom-6 mb-14 lg:mb-0 left-1/2 transform -translate-x-1/2 w-max max-w-[94%] sm:max-w-lg z-50"
+      ></div>
+      <div
+        role="alert"
+        class="fixed bottom-6 mb-14 lg:mb-0 left-1/2 transform -translate-x-1/2 w-max max-w-[94%] sm:max-w-lg z-50"
+      ></div>
+      <div
+        role="alert"
+        class="fixed bottom-6 mb-14 lg:mb-0 left-1/2 transform -translate-x-1/2 w-max max-w-[94%] sm:max-w-lg z-50"
+      ></div>
+      <div
+        role="alert"
+        class="fixed bottom-6 mb-14 lg:mb-0 left-1/2 transform -translate-x-1/2 w-max max-w-[94%] sm:max-w-lg z-50"
+      ></div>
+
+      <script src="js/app.js"></script>
+    </div>
+
+    <footer
+      class="relative text-sm text-navy-400 leading-6 pb-8 pt-12 lg:pt-20 text-medium bg-navy-950 bg-gradient-to-br from-gray-900/50 via-navy-900/50 to-navy-950/50"
+      role="contentinfo"
+    >
+      <div
+        class="container mx-auto px-4 sm:px-6 lg:px-8 pb-12 lg:pb-20 grid md:grid-cols-auto-span items-start gap-10 md:gap-16"
+      >
+      
+        
+      </div>
+      <p class="text-xs text-center mb-0">
+        &copy; 2024 CloudCode Review. All rights reserved.
+      </p>
+    </footer>
+  </body>
+</html>
