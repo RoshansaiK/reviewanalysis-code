@@ -6,7 +6,7 @@ if (!isset($_SESSION['email']) || $_SESSION['role'] != 1) {
     header('Location: index.php');
     exit();
 }
-
+//
 // Database connection (assuming it's in db.connection.php)
 include('db.connection.php');
 
@@ -54,9 +54,9 @@ body::before {
     width: 100%;
     height: 100%;
     background: url('https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2023-02/230203-chatgpt-test-scanning-le-1436-230b9d.jpg') no-repeat center center/cover;
-    filter: blur(8px); /* Add the blur effect */
-    z-index: -1; /* Ensure it stays behind the content */
-    opacity: 0.8; /* Optional: Adjust visibility */
+    filter: blur(8px); 
+    z-index: -1; 
+    opacity: 0.8; 
 }
 
         /* Navbar Styles */
